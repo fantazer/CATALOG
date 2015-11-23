@@ -85,46 +85,83 @@
 							<div class="row row-flex">
 								<div class="col-md-8 main-cont-right-wraper-left">
 
-									<!-- ###### add class active-icon to circle-button -> for active icon ##### -->
-	                <!-- icon-line -->
-	                <div class="flex-start m25_0">
-	                  <div class="circle-button ">
-	                    <a href="#" class="IconDeleteNormal50"></a>
-	                  </div>
-	                  <button type="button" class="btn btn-primary">Предложить корректировку</button>
-	                </div>
-	                <!-- icon-line -->
-
-	                	
 	                	<!-- top-part-form -->
-	                	<div class="form-group">
-	                		<label for="">№ Услуги:</label>
+	                	<div class="form-group m25_0">
+	                		<label for="">Название SLA</label>
 	                		<input type="text" class="form-control w60per" id="" >
-	                		<label for="">Наименование слуги:</label>
+	                		<label for="">Описание:</label>
 	                		<textarea  class="form-control" rows="3" required="required"></textarea> 
-	                		<label for="">Краткое описание функциональности:</label>
-	                		<textarea  class="form-control" rows="5" required="required"></textarea> 
 	                	</div>
 	                	<!-- top-part-form -->
+
+										<div class="row">
+											<div class="col-md-6">
+												<!-- item-select -->
+		                			<label for="">Статус:</label>
+		                			<select name="" class="form-control" required="required">
+		                				<option value="">Новая</option>
+		                			</select>
+		                		<!-- item-select -->
+											</div>
+											<div class="col-md-6">
+												<!-- item-select -->
+		                			<label for="">Категория:</label>
+		                			<select name="" class="form-control" required="required">
+		                				<option value="">Новая</option>
+		                			</select>
+		                		<!-- item-select -->
+											</div>
+										</div>
+
+										<div class="row">
+											<div class="col-md-4">
+												<!-- item-select -->
+		                			<label for="" class="fz11">Время восстановления доступности:</label>
+		                			<select name="" class="form-control" required="required">
+		                				<option value="">Новая</option>
+		                			</select>
+		                		<!-- item-select -->
+											</div>
+											<div class="col-md-4">
+												<!-- item-select -->
+		                			<label for="" class="fz11">Целевая доступность:</label>
+		                			<select name="" class="form-control" required="required">
+		                				<option value="">Новая</option>
+		                			</select>
+		                		<!-- item-select -->
+											</div>
+											<div class="col-md-4">
+												<!-- item-select -->
+		                			<label for="" class="fz11">Максимальный интервал потери данных после восстановления:</label>
+		                			<select name="" class="form-control" required="required">
+		                				<option value="">Новая</option>
+		                			</select>
+		                		<!-- item-select -->
+											</div>
+										</div>
 
 
 	                	<div class="row">
 
 	                	<!-- left-column -->
 	                		<div class="col-md-6">
-		                		<!-- item-select -->
-		                			<label for="">Статус:</label>
-		                			<select name="" class="form-control" required="required">
-		                				<option value="">Новая</option>
-		                			</select>
-		                		<!-- item-select -->
+		                		<!-- item-date-event -->
+		                			<label for="">Дата начала действий:</label>
+		                			<input type="text" class="form-control date-event"  >
+		                		<!-- item-date-event -->
 
-		                		<!-- item-select -->
-		                			<label for="">Заказчик услуги (сервиса): </label>
-		                			<select name="" class="form-control" required="required">
-		                				<option value="">ДИТ</option>
-		                			</select>
-		                		<!-- item-select -->
+		                		<!-- item-date-event -->
+		                			<label for="">Дата окончания действий: </label>
+		                			<input type="text" class="form-control date-event"  >
+		                		<!-- item-date-event -->
+
+		                		<!-- item-input -->
+			                	<div class="form-group m25_0">
+			                		<label for="">Заказчик</label>
+			                		<input type="text" class="form-control " id="" >
+			                		
+			                	</div>
+	                			<!-- item-input -->
 
 		                		<label for="">Время предоставления</label>
 
@@ -349,23 +386,20 @@
                							<label class="fw300" for="">Нет</label>				
 		                			</div>
 		                		<!-- radio-select -->
-
 	                		</div>
 	                	<!-- left-column -->
 
 	                	<!-- Right-column -->
 	                		<div class="col-md-6">
-	                			<!-- item-select -->
-		                			<label for="">Категория:</label>
-		                			<select name="" class="form-control" required="required">
-		                				<option value="">Конечная</option>
-		                			</select>
-		                		<!-- item-select -->
+	                			<!-- item-date-event -->
+		                			<label for="">Дата планового пересмотра:</label>
+		                			<input type="text" class="form-control date-event"  >
+		                		<!-- item-date-event -->
 		                		
 		                		<!-- item-select -->
-		                			<label for="">Подразделения ЦБ РФ, использующие услугу:  </label>
+		                			<label for="" class="mt85">Пользователь:  </label>
 		                			<select name="" class="form-control" required="required">
-		                				<option value="">Структурные подразделения ЦА БР</option>
+		                				<option value=""></option>
 		                			</select>
 		                		<!-- item-select -->
 												

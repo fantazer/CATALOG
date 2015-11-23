@@ -320,6 +320,9 @@ a:hover {
 .bold {
   font-weight: 600;
 }
+.fz11 {
+  font-size: 11px !important;
+}
 .fz12 {
   font-size: 12px !important;
 }
@@ -414,6 +417,9 @@ a:hover {
 }
 .mt40 {
   margin-top: 40px;
+}
+.mt85 {
+  margin-top: 85px;
 }
 /* ##### Margins ##### */
 .w60per {
@@ -565,7 +571,7 @@ p {
   border-right: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
 }
-thead {
+.page-card-datatable thead {
   border-top: 1px solid #ddd;
   background: #2d3b50;
   color: #fff;

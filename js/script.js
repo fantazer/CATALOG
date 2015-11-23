@@ -18,4 +18,18 @@ $(document).ready(function(){
 			}	
 		}		
 	);
+	$('#date-event-one').datetimepicker({
+                    locale: 'ru',
+                		format: 'DD/MM/YYYY'
+                });
+	$('.date-event').datetimepicker({
+                    locale: 'ru',
+                		format: 'DD/MM/YYYY'
+                });
+	$("#html1").jstree({
+    "checkbox" : {
+      "keep_selected_style" : false
+    },
+    "plugins" : [ "checkbox" ]
+ 	 });
 })
