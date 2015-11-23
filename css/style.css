@@ -826,5 +826,24 @@ p {
   margin-right: 20px;
   color: #607594;
 }
+.jstree-anchor {
+  white-space: normal;
+}
+.table-tree table {
+  margin-top: 10px;
+}
+.table-tree thead {
+  background: #364760;
+  color: #fff;
+}
+.jstree-default .jstree-anchor {
+  height: auto;
+  background: #fff;
+  width: 98%;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 2px;
+  border: 1px solid #dadada;
+}
 /*# sourceMappingURL=css/style.css.map */
 /*# sourceMappingURL=style.css.map */

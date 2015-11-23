@@ -26,10 +26,11 @@ $(document).ready(function(){
                     locale: 'ru',
                 		format: 'DD/MM/YYYY'
                 });
-	$("#html1").jstree({
+	$(".table-tree").jstree({
     "checkbox" : {
       "keep_selected_style" : false
     },
-    "plugins" : [ "checkbox" ]
+    "plugins" : [ "checkbox" ],
+    "icon" : "glyphicon glyphicon-leaf"
  	 });
 })
