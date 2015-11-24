@@ -1,4 +1,6 @@
+
 $(document).ready(function(){
+
 	$('.bs3-dataTable').DataTable(
 			{
 				"oLanguage": {
@@ -18,14 +20,20 @@ $(document).ready(function(){
 			}	
 		}		
 	);
+
+	//date Picker
 	$('#date-event-one').datetimepicker({
                     locale: 'ru',
                 		format: 'DD/MM/YYYY'
                 });
+
+	//date Picker
 	$('.date-event').datetimepicker({
                     locale: 'ru',
                 		format: 'DD/MM/YYYY'
                 });
+
+	//table-tree
 	$(".table-tree").jstree({
     "checkbox" : {
       "keep_selected_style" : false
@@ -33,4 +41,14 @@ $(document).ready(function(){
     "plugins" : [ "checkbox" ],
     "icon" : "glyphicon glyphicon-leaf"
  	 });
+
+	//tooltip
+	$('[data-toggle="tooltip"]').tooltip();
+
+	//chosen
+	$(".chosen-select").chosen();
+
+	
 })
+
+
