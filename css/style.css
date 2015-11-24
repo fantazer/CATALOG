@@ -477,6 +477,22 @@ a:hover {
   width: 50px;
   height: 50px;
   border-radius: 50%;
+  position: relative;
+}
+.head-right-avatar:hover {
+  cursor: pointer;
+}
+.head-right-avatar-menu {
+  position: absolute;
+  background: #008000;
+  padding: 5px 10px;
+  width: 145px;
+  left: -75px;
+  top: 60px;
+  display: none;
+}
+.head-right-avatar-menu a {
+  color: #fff;
 }
 .main-cont {
   margin-top: 70px;

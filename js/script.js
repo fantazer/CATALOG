@@ -48,7 +48,9 @@ $(document).ready(function(){
 	//chosen
 	$(".chosen-select").chosen();
 
-	
+	$('.head-right-avatar').click(function(){
+		$('.head-right-avatar-menu').slideToggle()
+	})
 })
 
 
