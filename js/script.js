@@ -33,6 +33,12 @@ $(document).ready(function(){
                 		format: 'DD/MM/YYYY'
                 });
 
+	//date Picker hours
+	$('.date-event-hours').datetimepicker({
+                    locale: 'ru',
+                		format: 'hh-mm'
+                });
+
 	//table-tree
 	$(".table-tree").jstree({
     "checkbox" : {

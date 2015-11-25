@@ -755,6 +755,14 @@ p {
   margin-left: 0px !important;
   width: 30px;
 }
+.inline-input-row-datepick .form-control {
+  width: 80px;
+  border-radius: 5px;
+  margin: 0 10px;
+  margin-bottom: 0;
+  text-align: center;
+  position: relative;
+}
 .group-date-select {
   margin-bottom: 30px;
 }
@@ -902,8 +910,22 @@ p {
   margin-bottom: 20px;
   width: 100%;
 }
-.chosen-container-multi .chosen-choices {
-  border: 1px solid #e0dddd;
+.glyphicon-chevron-up {
+  display: inline-block;
+  width: 30px;
+  height: 30px !important;
+  line-height: 30px !important;
+  margin: 2px 1.5px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.bootstrap-datetimepicker-widget a[data-action] {
+  padding: 0 !important;
+}
+.metamodel-configBase {
+  background: #fff;
+  padding: 20px;
+  margin-right: 40px;
 }
 /*# sourceMappingURL=css/style.css.map */
 /*# sourceMappingURL=style.css.map */
