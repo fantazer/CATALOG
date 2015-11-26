@@ -36,7 +36,7 @@ $(document).ready(function(){
 	//date Picker hours
 	$('.date-event-hours').datetimepicker({
                     locale: 'ru',
-                		format: 'hh-mm'
+                		format: 'LT'
                 });
 
 	//table-tree
@@ -57,6 +57,26 @@ $(document).ready(function(){
 	$('.head-right-avatar').click(function(){
 		$('.head-right-avatar-menu').slideToggle()
 	})
+
+	var figure = $('.methamodel-head-item-figure-block');
+	var dropBlock = $('.figure-dropblock');
+	var circlebutton = $('.circle-button');
+	figure.click(function(){
+		figure.each(function(){
+			$(this).removeClass('bgwhite').find(dropBlock).removeClass("displayblock");
+			$(this).find(circlebutton).removeClass("active-icon")
+		})
+			$(this).addClass("bgwhite").find(dropBlock).addClass("displayblock");
+			$(this).find(circlebutton).addClass("active-icon")
+		});
+
+		var colorChar = $('.methamodel-head-item-textFont-typeRow-colors');
+		colorChar.click(function(){
+		colorChar.each(function(){
+			$(this).removeClass('bgwhite').find(dropBlock).removeClass("displayblock");
+		})
+			$(this).addClass("bgwhite").find(dropBlock).addClass("displayblock");
+		});
 })
 
 
