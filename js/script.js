@@ -77,6 +77,30 @@ $(document).ready(function(){
 		})
 			$(this).addClass("bgwhite").find(dropBlock).addClass("displayblock");
 		});
+
+		//Toggle for filter
+		$('.row-catalog-date-pick-toggle').click(function(){
+			 $('.row-catalog-date-pick-toggle-filter').slideToggle();
+		})
+
+		var iconBread = $('.breadcrumb-button');
+		iconBread.click(function(){
+			iconBread.each(function(){
+				$(this).removeClass('active-icon');
+			})
+			$(this).addClass('active-icon');
+		})
+
+		$('.breadcrumb-button-one').click(function(){
+			$('.hidden-table-toggle-one').toggleClass("hidden");
+			$('.hidden-table-toggle-two').addClass("hidden");
+		})
+
+		$('.breadcrumb-button-two').click(function(){
+			$('.hidden-table-toggle-two').toggleClass("hidden");
+			$('.hidden-table-toggle-one').addClass("hidden");
+		})
+
 })
 
 
