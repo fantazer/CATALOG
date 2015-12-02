@@ -44,8 +44,10 @@ $(document).ready(function(){
     "checkbox" : {
       "keep_selected_style" : false
     },
-    "plugins" : [ "checkbox" ],
-    "icon" : "glyphicon glyphicon-leaf"
+    "core" : {
+	    "multiple" : false,
+	    "animation" : 0
+	  }
  	 });
 
 	//tooltip
@@ -81,6 +83,8 @@ $(document).ready(function(){
 		//Toggle for filter
 		$('.row-catalog-date-pick-toggle').click(function(){
 			 $('.row-catalog-date-pick-toggle-filter').slideToggle();
+			 $('.row-catalog-date-pick-toggle').toggleClass('filter-color');
+
 		})
 
 		var iconBread = $('.breadcrumb-button');
@@ -100,6 +104,66 @@ $(document).ready(function(){
 			$('.hidden-table-toggle-two').toggleClass("hidden");
 			$('.hidden-table-toggle-one').addClass("hidden");
 		})
+
+
+		$('.tree').treegrid();
+		$('.treegrid-expander').click();
+
+		//get url from checkbox for treeTable
+		var valCheckboxItem;
+		$('.tree').click(function(){
+		 		var valCheckbox = '';
+		 		if ( $('.tree input[type=checkbox]' ).is( ":checked" ) ) {
+					$('.button-href-checkbox').addClass('active-icon');
+				} else {
+					$('.button-href-checkbox').removeClass('active-icon')
+				}
+				var i = 0;
+				$('.tree input[type=checkbox]').each(function(){
+					if ($(this).is(':checked')) {
+						i++;
+						valCheckboxItem = $(this).val();
+						valCheckbox=valCheckbox+valCheckboxItem+',';
+						console.log(i);
+						var hrefButton = $('.button-href-checkbox a').attr('href').split('?')[0]+'?';
+						resuktHref = hrefButton+valCheckbox;
+						resuktHref = resuktHref.substring(0, resuktHref.length - 1)
+						$('.button-href-checkbox a').attr('href',resuktHref);
+						if (i > 1) {
+							$('.button-edit').removeClass('active-icon');
+						};
+					};
+				})
+				
+		});
+
+		//get url from checkbox for dataTable
+		$('.page-card-datatable').click(function(){
+		 		var valCheckbox = '';
+		 		if ( $('.page-card-datatable input[type=checkbox]' ).is( ":checked" ) ) {
+					$('.button-href-checkbox').addClass('active-icon');
+				} else {
+					$('.button-href-checkbox').removeClass('active-icon')
+				}
+				var i = 0;
+				$('.page-card-datatable input[type=checkbox]').each(function(){
+					if ($(this).is(':checked')) {
+						i++;
+						valCheckboxItem = $(this).val();
+						valCheckbox=valCheckbox+valCheckboxItem+',';
+						console.log(i);
+						var hrefButton = $('.button-href-checkbox a').attr('href').split('?')[0]+'?';
+						resuktHref = hrefButton+valCheckbox;
+						resuktHref = resuktHref.substring(0, resuktHref.length - 1)
+						$('.button-href-checkbox a').attr('href',resuktHref);
+						if (i > 1) {
+							$('.button-edit').removeClass('active-icon');
+						};
+					};
+				})
+				
+		});
+
 
 })
 

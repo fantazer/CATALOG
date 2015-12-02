@@ -1,0 +1,365 @@
+/*
+Icon classes can be used entirely standalone. They are named after their original file names.
+
+```html
+<!-- `display: block` sprite -->
+<div class="icon-home"></div>
+
+<!-- `display: inline-block` sprite -->
+<img class="icon-home" />
+```
+*/
+.icon-IconBoldActive30 {
+  background-image: url(sprite-1.png);
+  background-position: 0px -160px;
+  width: 30px;
+  height: 30px;
+}
+.icon-IconBoldHover30 {
+  background-image: url(sprite-1.png);
+  background-position: -90px -160px;
+  width: 30px;
+  height: 30px;
+}
+.icon-IconBoldNormal30 {
+  background-image: url(sprite-1.png);
+  background-position: -30px -160px;
+  width: 30px;
+  height: 30px;
+}
+.icon-IconColorLineActive30 {
+  background-image: url(sprite-1.png);
+  background-position: -60px -160px;
+  width: 30px;
+  height: 30px;
+}
+.icon-IconColorLineHover30 {
+  background-image: url(sprite-1.png);
+  background-position: -240px -180px;
+  width: 30px;
+  height: 30px;
+}
+.icon-IconColorLineNormal30 {
+  background-image: url(sprite-1.png);
+  background-position: 0px -220px;
+  width: 30px;
+  height: 30px;
+}
+.icon-IconColorTextActive30 {
+  background-image: url(sprite-1.png);
+  background-position: -30px -220px;
+  width: 30px;
+  height: 30px;
+}
+.icon-IconColorTextHover30 {
+  background-image: url(sprite-1.png);
+  background-position: -30px -100px;
+  width: 30px;
+  height: 30px;
+}
+.icon-IconColorTextNormal30 {
+  background-image: url(sprite-1.png);
+  background-position: -60px -100px;
+  width: 30px;
+  height: 30px;
+}
+.icon-IconConnectingLineActive30 {
+  background-image: url(sprite-1.png);
+  background-position: -90px -100px;
+  width: 30px;
+  height: 30px;
+}
+.icon-IconConnectingLineHover30 {
+  background-image: url(sprite-1.png);
+  background-position: -120px -100px;
+  width: 30px;
+  height: 30px;
+}
+.icon-IconConnectingLineNormal30 {
+  background-image: url(sprite-1.png);
+  background-position: -150px 0px;
+  width: 30px;
+  height: 30px;
+}
+.icon-IconCopy30 {
+  background-image: url(sprite-1.png);
+  background-position: -150px -30px;
+  width: 30px;
+  height: 30px;
+}
+.icon-IconCopyActive30 {
+  background-image: url(sprite-1.png);
+  background-position: -150px -60px;
+  width: 30px;
+  height: 30px;
+}
+.icon-IconCursiveActive30 {
+  background-image: url(sprite-1.png);
+  background-position: -150px -90px;
+  width: 30px;
+  height: 30px;
+}
+.icon-IconCursiveHover30 {
+  background-image: url(sprite-1.png);
+  background-position: 0px -130px;
+  width: 30px;
+  height: 30px;
+}
+.icon-IconCursiveNormal30 {
+  background-image: url(sprite-1.png);
+  background-position: -30px -130px;
+  width: 30px;
+  height: 30px;
+}
+.icon-IconCut30 {
+  background-image: url(sprite-1.png);
+  background-position: -60px -130px;
+  width: 30px;
+  height: 30px;
+}
+.icon-IconCutActive30 {
+  background-image: url(sprite-1.png);
+  background-position: -90px -130px;
+  width: 30px;
+  height: 30px;
+}
+.icon-IconCutHover30 {
+  background-image: url(sprite-1.png);
+  background-position: -120px -130px;
+  width: 30px;
+  height: 30px;
+}
+.icon-IconFigureActive30 {
+  background-image: url(sprite-1.png);
+  background-position: -150px -130px;
+  width: 30px;
+  height: 30px;
+}
+.icon-IconFigureHover30 {
+  background-image: url(sprite-1.png);
+  background-position: -180px 0px;
+  width: 30px;
+  height: 30px;
+}
+.icon-IconFigureNormal30 {
+  background-image: url(sprite-1.png);
+  background-position: -180px -30px;
+  width: 30px;
+  height: 30px;
+}
+.icon-IconFillActive30 {
+  background-image: url(sprite-1.png);
+  background-position: -180px -60px;
+  width: 30px;
+  height: 30px;
+}
+.icon-IconFillHover30 {
+  background-image: url(sprite-1.png);
+  background-position: -180px -90px;
+  width: 30px;
+  height: 30px;
+}
+.icon-IconFillNormal30 {
+  background-image: url(sprite-1.png);
+  background-position: -180px -120px;
+  width: 30px;
+  height: 30px;
+}
+.icon-IconOneColumn50 {
+  background-image: url(sprite-1.png);
+  background-position: 0px 0px;
+  width: 50px;
+  height: 50px;
+}
+.icon-IconOneColumnActive50 {
+  background-image: url(sprite-1.png);
+  background-position: -50px 0px;
+  width: 50px;
+  height: 50px;
+}
+.icon-IconOneColumnHover50 {
+  background-image: url(sprite-1.png);
+  background-position: 0px -50px;
+  width: 50px;
+  height: 50px;
+}
+.icon-IconPaste30 {
+  background-image: url(sprite-1.png);
+  background-position: 0px -100px;
+  width: 30px;
+  height: 30px;
+}
+.icon-IconPasteActive30 {
+  background-image: url(sprite-1.png);
+  background-position: -120px -160px;
+  width: 30px;
+  height: 30px;
+}
+.icon-IconPasteHover30 {
+  background-image: url(sprite-1.png);
+  background-position: -150px -160px;
+  width: 30px;
+  height: 30px;
+}
+.icon-IconTextActive30 {
+  background-image: url(sprite-1.png);
+  background-position: -180px -160px;
+  width: 30px;
+  height: 30px;
+}
+.icon-IconTextBottomActive30 {
+  background-image: url(sprite-1.png);
+  background-position: -210px 0px;
+  width: 30px;
+  height: 30px;
+}
+.icon-IconTextBottomHover30 {
+  background-image: url(sprite-1.png);
+  background-position: -210px -30px;
+  width: 30px;
+  height: 30px;
+}
+.icon-IconTextBottomNormal30 {
+  background-image: url(sprite-1.png);
+  background-position: -210px -60px;
+  width: 30px;
+  height: 30px;
+}
+.icon-IconTextCenterActive30 {
+  background-image: url(sprite-1.png);
+  background-position: -210px -90px;
+  width: 30px;
+  height: 30px;
+}
+.icon-IconTextCenterHoverl30 {
+  background-image: url(sprite-1.png);
+  background-position: -210px -120px;
+  width: 30px;
+  height: 30px;
+}
+.icon-IconTextCenterNormal30 {
+  background-image: url(sprite-1.png);
+  background-position: -210px -150px;
+  width: 30px;
+  height: 30px;
+}
+.icon-IconTextHover30 {
+  background-image: url(sprite-1.png);
+  background-position: 0px -190px;
+  width: 30px;
+  height: 30px;
+}
+.icon-IconTextLeftActive30 {
+  background-image: url(sprite-1.png);
+  background-position: -30px -190px;
+  width: 30px;
+  height: 30px;
+}
+.icon-IconTextLeftHover30 {
+  background-image: url(sprite-1.png);
+  background-position: -60px -190px;
+  width: 30px;
+  height: 30px;
+}
+.icon-IconTextLeftNormal30 {
+  background-image: url(sprite-1.png);
+  background-position: -90px -190px;
+  width: 30px;
+  height: 30px;
+}
+.icon-IconTextMiddleActive30 {
+  background-image: url(sprite-1.png);
+  background-position: -120px -190px;
+  width: 30px;
+  height: 30px;
+}
+.icon-IconTextMiddleHover30 {
+  background-image: url(sprite-1.png);
+  background-position: -150px -190px;
+  width: 30px;
+  height: 30px;
+}
+.icon-IconTextMiddleNormal30 {
+  background-image: url(sprite-1.png);
+  background-position: -180px -190px;
+  width: 30px;
+  height: 30px;
+}
+.icon-IconTextNormal30 {
+  background-image: url(sprite-1.png);
+  background-position: -210px -190px;
+  width: 30px;
+  height: 30px;
+}
+.icon-IconTextRightActive30 {
+  background-image: url(sprite-1.png);
+  background-position: -240px 0px;
+  width: 30px;
+  height: 30px;
+}
+.icon-IconTextRightHoverl30 {
+  background-image: url(sprite-1.png);
+  background-position: -240px -30px;
+  width: 30px;
+  height: 30px;
+}
+.icon-IconTextRightNormal30 {
+  background-image: url(sprite-1.png);
+  background-position: -240px -60px;
+  width: 30px;
+  height: 30px;
+}
+.icon-IconTextTopActive30 {
+  background-image: url(sprite-1.png);
+  background-position: -240px -90px;
+  width: 30px;
+  height: 30px;
+}
+.icon-IconTextTopHover30 {
+  background-image: url(sprite-1.png);
+  background-position: -240px -120px;
+  width: 30px;
+  height: 30px;
+}
+.icon-IconTextTopNormal30 {
+  background-image: url(sprite-1.png);
+  background-position: -240px -150px;
+  width: 30px;
+  height: 30px;
+}
+.icon-IconTwoColumnsActive50 {
+  background-image: url(sprite-1.png);
+  background-position: -50px -50px;
+  width: 50px;
+  height: 50px;
+}
+.icon-IconTwoColumnsHover50 {
+  background-image: url(sprite-1.png);
+  background-position: -100px 0px;
+  width: 50px;
+  height: 50px;
+}
+.icon-IconTwoColumnsNormal50 {
+  background-image: url(sprite-1.png);
+  background-position: -100px -50px;
+  width: 50px;
+  height: 50px;
+}
+.icon-IconUnderlinedActive30 {
+  background-image: url(sprite-1.png);
+  background-position: -60px -220px;
+  width: 30px;
+  height: 30px;
+}
+.icon-IconUnderlinedHover30 {
+  background-image: url(sprite-1.png);
+  background-position: -90px -220px;
+  width: 30px;
+  height: 30px;
+}
+.icon-IconUnderlinedNormal30 {
+  background-image: url(sprite-1.png);
+  background-position: -120px -220px;
+  width: 30px;
+  height: 30px;
+}

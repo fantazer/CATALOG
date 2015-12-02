@@ -708,6 +708,9 @@ body {
 .displaynone {
   display: none !important;
 }
+.hide {
+  display: none;
+}
 .displayblock {
   display: block !important;
 }
@@ -1520,21 +1523,10 @@ p {
 }
 .row-catalog-date-pick-toggle {
   position: relative;
+  background: #26abe2 !important;
 }
 .row-catalog-date-pick-toggle:hover:before {
-  background: #449d44;
-}
-.row-catalog-date-pick-toggle:before {
-  content: '';
-  width: 15px;
-  height: 15px;
-  position: absolute;
-  bottom: -5px;
-  left: 95px;
-  background: #5cb85c;
-  -webkit-transform: rotate(45deg);
-      -ms-transform: rotate(45deg);
-          transform: rotate(45deg);
+  background: #26abe2 !important;
 }
 .main-cont-right-breadcrumb-rightpart {
   position: relative;
@@ -1546,6 +1538,48 @@ p {
   left: -300px;
   width: 400px;
   min-height: 700px;
+}
+.tree {
+  width: 100%;
+}
+.tree input[type=checkbox] {
+  margin-right: 10px;
+}
+.tree table {
+  width: 96%;
+  margin-bottom: 0;
+}
+.tree-head {
+  padding: 10px;
+  display: block;
+/* color: #fff; */
+/* background: #364760; */
+  width: 100%;
+  border-top: 1px solid #eef1f7;
+  border: 1px solid #dee0e4;
+  margin-bottom: 3px;
+  border-radius: 5px;
+}
+.treegrid-expander {
+  margin-right: 10px;
+}
+.filter-color {
+  background: #449d44 !important;
+}
+.filter-color:hover:before {
+  background: #449d44 !important;
+}
+.filter-color:before {
+  content: '';
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  bottom: -5px;
+  left: 95px;
+  background: #449d44;
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
 }
 /*# sourceMappingURL=css/style.css.map */
 /*# sourceMappingURL=style.css.map */
