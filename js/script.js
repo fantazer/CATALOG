@@ -39,16 +39,16 @@ $(document).ready(function(){
                 		format: 'LT'
                 });
 
-	//table-tree
-	$(".table-tree").jstree({
-    "checkbox" : {
-      "keep_selected_style" : false
-    },
-    "core" : {
-	    "multiple" : false,
-	    "animation" : 0
-	  }
- 	 });
+	////table-tree
+	//$(".table-tree").jstree({
+    //"checkbox" : {
+    //  "keep_selected_style" : false
+    //},
+    //"core" : {
+	//    "multiple" : false,
+	//    "animation" : 0
+	//  }
+ 	// });
 
 	//tooltip
 	$('[data-toggle="tooltip"]').tooltip();
@@ -87,20 +87,24 @@ $(document).ready(function(){
 
 		})
 
-		var iconBread = $('.breadcrumb-button');
+		/*var iconBread = $('.breadcrumb-button');
 		iconBread.click(function(){
 			iconBread.each(function(){
 				$(this).removeClass('active-icon');
 			})
-			$(this).addClass('active-icon');
-		})
+			$(this).toggleClass('active-icon');
+		})*/
 
 		$('.breadcrumb-button-one').click(function(){
+			$(this).toggleClass("active-icon");
+			$(".breadcrumb-button-two").removeClass("active-icon");
 			$('.hidden-table-toggle-one').toggleClass("hidden");
 			$('.hidden-table-toggle-two').addClass("hidden");
 		})
 
 		$('.breadcrumb-button-two').click(function(){
+			$(this).toggleClass("active-icon");
+			$(".breadcrumb-button-one").removeClass("active-icon");
 			$('.hidden-table-toggle-two').toggleClass("hidden");
 			$('.hidden-table-toggle-one').addClass("hidden");
 		})
@@ -109,60 +113,78 @@ $(document).ready(function(){
 		$('.tree').treegrid();
 		$('.treegrid-expander').click();
 
-		//get url from checkbox for treeTable
+    //get url from checkbox for treeTable
+    $('.button-href-checkbox a').bind('click', function(e){
+        e.preventDefault();
+		})
 		var valCheckboxItem;
-		$('.tree').click(function(){
-		 		var valCheckbox = '';
-		 		if ( $('.tree input[type=checkbox]' ).is( ":checked" ) ) {
-					$('.button-href-checkbox').addClass('active-icon');
-				} else {
-					$('.button-href-checkbox').removeClass('active-icon')
-				}
-				var i = 0;
-				$('.tree input[type=checkbox]').each(function(){
-					if ($(this).is(':checked')) {
-						i++;
-						valCheckboxItem = $(this).val();
-						valCheckbox=valCheckbox+valCheckboxItem+',';
-						console.log(i);
-						var hrefButton = $('.button-href-checkbox a').attr('href').split('?')[0]+'?';
-						resuktHref = hrefButton+valCheckbox;
-						resuktHref = resuktHref.substring(0, resuktHref.length - 1)
-						$('.button-href-checkbox a').attr('href',resuktHref);
-						if (i > 1) {
-							$('.button-edit').removeClass('active-icon');
-						};
-					};
+		$('.tree').click(function () {
+				$('.button-href-checkbox a').bind('click', function(e){
+		        e.preventDefault();
 				})
-				
+		    var valCheckbox = '';
+		    if ($('.tree input[type=checkbox]').is(":checked")) {
+		        $('.button-href-checkbox').addClass('active-icon');
+		    } else {
+		        $('.button-href-checkbox').removeClass('active-icon')
+		    }
+		    var i = 0;
+		    $('.tree input[type=checkbox]').each(function () {
+		    		
+		        if ($(this).is(':checked')) {
+		        		$('.button-href-checkbox a').unbind('click')
+		            i++;
+		            valCheckboxItem = $(this).val();
+		            valCheckbox = valCheckbox + valCheckboxItem + ',';
+		            console.log(i);
+		            console.log(valCheckbox);
+		            $('.button-href-checkbox a').each(function () {
+		                var hrefButton = $(this).attr('href').split('?id=')[0] + '?id=';
+		                resuktHref = hrefButton + valCheckbox;
+		                resuktHref = resuktHref.substring(0, resuktHref.length - 1)
+		                $(this).attr('href', resuktHref);
+		            })
+		            if (i > 1) {
+		                $('.button-edit').removeClass('active-icon');
+		                $('.button-edit').bind('click', function(e){
+								        e.preventDefault();
+										})
+		            };
+
+		        };
+		    })
+
 		});
 
-		//get url from checkbox for dataTable
-		$('.page-card-datatable').click(function(){
-		 		var valCheckbox = '';
-		 		if ( $('.page-card-datatable input[type=checkbox]' ).is( ":checked" ) ) {
-					$('.button-href-checkbox').addClass('active-icon');
-				} else {
-					$('.button-href-checkbox').removeClass('active-icon')
-				}
-				var i = 0;
-				$('.page-card-datatable input[type=checkbox]').each(function(){
-					if ($(this).is(':checked')) {
-						i++;
-						valCheckboxItem = $(this).val();
-						valCheckbox=valCheckbox+valCheckboxItem+',';
-						console.log(i);
-						var hrefButton = $('.button-href-checkbox a').attr('href').split('?')[0]+'?';
-						resuktHref = hrefButton+valCheckbox;
-						resuktHref = resuktHref.substring(0, resuktHref.length - 1)
-						$('.button-href-checkbox a').attr('href',resuktHref);
-						if (i > 1) {
-							$('.button-edit').removeClass('active-icon');
-						};
-					};
-				})
-				
+    //get url from checkbox for dataTable
+		$('.page-card-datatable').click(function () {
+		    var valCheckbox = '';
+		    if ($('.page-card-datatable input[type=checkbox]').is(":checked")) {
+		        $('.button-href-checkbox').addClass('active-icon');
+		    } else {
+		        $('.button-href-checkbox').removeClass('active-icon')
+		    }
+		    var i = 0;
+		    $('.page-card-datatable input[type=checkbox]').each(function () {
+		        if ($(this).is(':checked')) {
+		            i++;
+		            valCheckboxItem = $(this).val();
+		            valCheckbox = valCheckbox + valCheckboxItem + ',';
+		            console.log(i);
+		            $('.button-href-checkbox a').each(function () {
+		                var hrefButton = $(this).attr('href').split('?id=')[0] + '?id=';
+		                resuktHref = hrefButton + valCheckbox;
+		                resuktHref = resuktHref.substring(0, resuktHref.length - 1)
+		                $(this).attr('href', resuktHref);
+		            })
+		            if (i > 1) {
+		                $('.button-edit').removeClass('active-icon');
+		            };
+		        };
+		    })
+
 		});
+
 
 
 })
