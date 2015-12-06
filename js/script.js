@@ -1,6 +1,6 @@
 
 $(document).ready(function(){
-
+	$('.IconPrintNormal50').addClass('always-activePrint')
 	$('.bs3-dataTable').DataTable(
 			{
 				"oLanguage": {
@@ -184,8 +184,7 @@ $(document).ready(function(){
 		    })
 
 		});
-
-
+  
 
 })
 
