@@ -1,7 +1,16 @@
 
 $(document).ready(function(){
+	//fix active icon
 	$('.IconPrintNormal50').addClass('always-activePrint')
-	$('.bs3-dataTable').DataTable(
+
+	//fix button
+	$('.IconEditNormal50').click(function(){
+		var goodLink = $(this).attr('href');
+		document.location.href=goodLink;
+	})
+
+ 
+	$('.bs3-dataTable').dataTable(
 			{
 				"oLanguage": {
 				"sLengthMenu": "_MENU_ записей на страницу",
@@ -19,7 +28,17 @@ $(document).ready(function(){
 				"bSortable": false
 			}	
 		}		
-	);
+	).columnFilter({
+    sPlaceHolder : 'head:after',
+    aoColumns: [ { type: "text"},
+                 { type: "text"},
+                 { type: "text"},
+                 { type: "text"},
+                 { type: "text"}
+               ] 
+		});
+
+
 
 	//date Picker
 	$('#date-event-one').datetimepicker({
