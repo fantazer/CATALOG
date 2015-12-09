@@ -2,9 +2,12 @@
 $(document).ready(function(){
 	//fix active icon
 	$('.IconPrintNormal50').addClass('always-activePrint')
+	$('.IconCreateServiceNormal50').addClass('always-activeAdd')
+	$('.IconCreateServiceNormal50').parent().addClass('button-href-checkbox')
 
 	//fix button
-	$('.IconEditNormal50').click(function(){
+
+	$('.always-activePrint').click(function(){
 		var goodLink = $(this).attr('href');
 		document.location.href=goodLink;
 	})
@@ -25,8 +28,9 @@ $(document).ready(function(){
 				"sNext":"Вперед",
 				"sPrevious":"Назад",
 				},
-				"bSortable": false
-			}	
+				"bSortable": false,
+			},
+			responsive: true
 		}		
 	).columnFilter({
     sPlaceHolder : 'head:after',
@@ -138,9 +142,6 @@ $(document).ready(function(){
 		})
 		var valCheckboxItem;
 		$('.tree').click(function () {
-				$('.button-href-checkbox a').bind('click', function(e){
-		        e.preventDefault();
-				})
 		    var valCheckbox = '';
 		    if ($('.tree input[type=checkbox]').is(":checked")) {
 		        $('.button-href-checkbox').addClass('active-icon');
@@ -151,7 +152,64 @@ $(document).ready(function(){
 		    $('.tree input[type=checkbox]').each(function () {
 		    		
 		        if ($(this).is(':checked')) {
-		        		$('.button-href-checkbox a').unbind('click')
+				        	$('.button-href-checkbox').each(function(){
+			        			if($(this).hasClass('active-icon')){
+			        				$(this).find('a').unbind('click')
+			        			}
+			        		})
+
+			            i++;
+			            valCheckboxItem = $(this).val();
+			            valCheckbox = valCheckbox + valCheckboxItem + ',';
+			            console.log(i);
+			            console.log(valCheckbox);
+
+			            $('.button-href-checkbox a').each(function () {
+			                var hrefButton = $(this).attr('href').split('?id=')[0] + '?id=';
+			                resuktHref = hrefButton + valCheckbox;
+			                resuktHref = resuktHref.substring(0, resuktHref.length - 1)
+			                $(this).attr('href', resuktHref);
+			            })
+
+			            if (i > 1) {
+			                $('.button-edit').removeClass('active-icon');
+			                $('.button-edit').bind('click', function(e){
+									        e.preventDefault();
+									})
+
+			            };
+			            if (i === 1) {
+			                $('.button-edit').unbind('click')
+			            };
+		        }
+		        if (i===0) {
+		        	$('.button-href-checkbox a').each(function () {
+			                var hrefButton = $(this).attr('href').split('?id=')[0] ;
+			                $(this).attr('href', hrefButton);
+			            })
+		        };
+		    })
+
+		});
+
+    //get url from checkbox for dataTable
+		$('.page-card-datatable input[type=checkbox]').click(function () {
+		    var valCheckbox = '';
+		    if ($('.page-card-datatable input[type=checkbox]').is(":checked")) {
+		        $('.button-href-checkbox').addClass('active-icon');
+		    } else {
+		        $('.button-href-checkbox').removeClass('active-icon')
+		    }
+		    var i = 0;
+		    $('.page-card-datatable input[type=checkbox]').each(function () {
+		        if ($(this).is(':checked')) {
+			        	
+			        	$('.button-href-checkbox').each(function(){
+		        			if($(this).hasClass('active-icon')){
+		        				$(this).find('a').unbind('click')
+		        			}
+		        		})
+
 		            i++;
 		            valCheckboxItem = $(this).val();
 		            valCheckbox = valCheckbox + valCheckboxItem + ',';
@@ -168,37 +226,17 @@ $(document).ready(function(){
 		                $('.button-edit').bind('click', function(e){
 								        e.preventDefault();
 										})
-		            };
 
+		            };
+		            if (i === 1) {
+		                $('.button-edit').unbind('click')
+		            };
 		        };
-		    })
-
-		});
-
-    //get url from checkbox for dataTable
-		$('.page-card-datatable').click(function () {
-		    var valCheckbox = '';
-		    if ($('.page-card-datatable input[type=checkbox]').is(":checked")) {
-		        $('.button-href-checkbox').addClass('active-icon');
-		    } else {
-		        $('.button-href-checkbox').removeClass('active-icon')
-		    }
-		    var i = 0;
-		    $('.page-card-datatable input[type=checkbox]').each(function () {
-		        if ($(this).is(':checked')) {
-		            i++;
-		            valCheckboxItem = $(this).val();
-		            valCheckbox = valCheckbox + valCheckboxItem + ',';
-		            console.log(i);
-		            $('.button-href-checkbox a').each(function () {
-		                var hrefButton = $(this).attr('href').split('?id=')[0] + '?id=';
-		                resuktHref = hrefButton + valCheckbox;
-		                resuktHref = resuktHref.substring(0, resuktHref.length - 1)
-		                $(this).attr('href', resuktHref);
-		            })
-		            if (i > 1) {
-		                $('.button-edit').removeClass('active-icon');
-		            };
+		        if (i===0) {
+		        	$('.button-href-checkbox a').each(function () {
+			                var hrefButton = $(this).attr('href').split('?id=')[0] ;
+			                $(this).attr('href', hrefButton);
+			            })
 		        };
 		    })
 

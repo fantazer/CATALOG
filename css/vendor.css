@@ -3662,6 +3662,12 @@ a:hover {
   width: 50px;
   height: 50px;
 }
+.always-activeAdd {
+  background-image: url("../img/sprite.png");
+  background-position: -100px -262px;
+  width: 50px;
+  height: 50px;
+}
 .main-cont-left-icon {
   display: inline-block;
   margin: 0 auto;
@@ -3686,7 +3692,7 @@ a:hover {
 }
 .main-cont-left-block .main-cont-left-block-hoverMenu {
   position: absolute;
-  left: 80px;
+  left: 65px;
   top: -10px;
   background-image: url("../img/bg.png");
   z-index: 5000;
@@ -4255,10 +4261,11 @@ p {
   position: absolute;
   bottom: 0px;
   top: 50px;
-  left: -300px;
+  right: 0px;
   width: 400px;
   min-height: 700px;
-  z-index: 2000;
+  z-index: 1000;
+  background: #fff;
 }
 .tree {
   width: 100%;
