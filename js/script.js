@@ -1,10 +1,20 @@
 
 $(document).ready(function(){
+
+	
+
+
 	//fix active icon
-	$('.IconPrintNormal50').addClass('always-activePrint')
+	$('.IconPrintNormal50').addClass('always-activePrint');
+
+	$('.IconCreateServiceNormal50').parent().addClass('buttonAdd');
+	$('.IconCreateServiceNormal50').parent().addClass('button-href-checkbox');
+	$('.IconCreateServiceNormal50').parent().addClass('active-icon');
+
 
 	//fix button
-	$('.IconEditNormal50').click(function(){
+
+	$('.always-activePrint').click(function(){
 		var goodLink = $(this).attr('href');
 		document.location.href=goodLink;
 	})
@@ -25,8 +35,9 @@ $(document).ready(function(){
 				"sNext":"Вперед",
 				"sPrevious":"Назад",
 				},
-				"bSortable": false
-			}	
+				"bSortable": false,
+			},
+			responsive: true
 		}		
 	).columnFilter({
     sPlaceHolder : 'head:after',
@@ -136,11 +147,11 @@ $(document).ready(function(){
     $('.button-href-checkbox a').bind('click', function(e){
         e.preventDefault();
 		})
+
+    $('.buttonAdd a').unbind('click');
+
 		var valCheckboxItem;
 		$('.tree').click(function () {
-				$('.button-href-checkbox a').bind('click', function(e){
-		        e.preventDefault();
-				})
 		    var valCheckbox = '';
 		    if ($('.tree input[type=checkbox]').is(":checked")) {
 		        $('.button-href-checkbox').addClass('active-icon');
@@ -151,24 +162,77 @@ $(document).ready(function(){
 		    $('.tree input[type=checkbox]').each(function () {
 		    		
 		        if ($(this).is(':checked')) {
-		        		$('.button-href-checkbox a').unbind('click')
-		            i++;
-		            valCheckboxItem = $(this).val();
-		            valCheckbox = valCheckbox + valCheckboxItem + ',';
-		            console.log(i);
-		            console.log(valCheckbox);
-		            $('.button-href-checkbox a').each(function () {
-		                var hrefButton = $(this).attr('href').split('?id=')[0] + '?id=';
-		                resuktHref = hrefButton + valCheckbox;
-		                resuktHref = resuktHref.substring(0, resuktHref.length - 1)
-		                $(this).attr('href', resuktHref);
-		            })
-		            if (i > 1) {
+				        	$('.button-href-checkbox').each(function(){
+			        			if($(this).hasClass('active-icon')){
+			        				$(this).find('a').unbind('click')
+			        			}
+			        		})
+
+			            i++;
+			            valCheckboxItem = $(this).val();
+			            valCheckbox = valCheckbox + valCheckboxItem + ',';
+
+			            $('.button-href-checkbox a').each(function () {
+			                var hrefButton = $(this).attr('href').split('?id=')[0] + '?id=';
+			                resuktHref = hrefButton + valCheckbox;
+			                resuktHref = resuktHref.substring(0, resuktHref.length - 1)
+			                $(this).attr('href', resuktHref);
+			            })
+
+			            /* For button export */
+			            var forExport = valCheckbox.substring(0, valCheckbox.length - 1);
+			            var funcExport = 'ExportToXML(' + forExport + ')';
+		            	$('#export').attr('onclick',funcExport);
+		            	/* For button export */
+		            	
+			            if (i > 1) {
 		                $('.button-edit').removeClass('active-icon');
 		                $('.button-edit').bind('click', function(e){
 								        e.preventDefault();
+										}) 
+
+										$('.buttonAdd').removeClass('active-icon');
+		                $('.buttonAdd').bind('click', function(e){
+								        e.preventDefault();
 										})
+
+
+										$('.circle-button').each(function(){
+											if ($(this).hasClass('buttonAdd') || $(this).hasClass('button-edit')) {
+													$(this).click(function(){
+														alert('Выберите только один элемент')
+													})
+											};
+										})
+
 		            };
+			            if (i === 1) {
+			                $('.button-edit').unbind('click');
+			                $('.buttonAdd').unbind('click');
+			            };
+		        }
+		        if (i===0) {
+		        	$('.button-href-checkbox a').each(function () {
+			                var hrefButton = $(this).attr('href').split('?id=')[0] ;
+			                $(this).attr('href', hrefButton);
+			            })
+		        	$('#export').attr('onclick','ExportToXML()');
+
+		        	 $('.button-href-checkbox').each(function(){
+		          	if (!$(this).hasClass('active-icon')) {
+		          		$(this).bind('click', function(e){
+							        e.preventDefault();
+									})
+		          	};
+		          })
+
+		        	 $('.circle-button').each(function(){
+											if ($(this).hasClass('button-edit') ) {
+													$(this).click(function(){
+														alert('Необходимо выбрать элемент для редактирования')
+													})
+											};
+							})
 
 		        };
 		    })
@@ -176,7 +240,7 @@ $(document).ready(function(){
 		});
 
     //get url from checkbox for dataTable
-		$('.page-card-datatable').click(function () {
+		$('.page-card-datatable input[type=checkbox]').click(function () {
 		    var valCheckbox = '';
 		    if ($('.page-card-datatable input[type=checkbox]').is(":checked")) {
 		        $('.button-href-checkbox').addClass('active-icon');
@@ -186,6 +250,13 @@ $(document).ready(function(){
 		    var i = 0;
 		    $('.page-card-datatable input[type=checkbox]').each(function () {
 		        if ($(this).is(':checked')) {
+			        	
+			        	$('.button-href-checkbox').each(function(){
+		        			if($(this).hasClass('active-icon')){
+		        				$(this).find('a').unbind('click')
+		        			}
+		        		})
+
 		            i++;
 		            valCheckboxItem = $(this).val();
 		            valCheckbox = valCheckbox + valCheckboxItem + ',';
@@ -196,14 +267,62 @@ $(document).ready(function(){
 		                resuktHref = resuktHref.substring(0, resuktHref.length - 1)
 		                $(this).attr('href', resuktHref);
 		            })
+
+		            /* For button export */
+		            var forExport = valCheckbox.substring(0, valCheckbox.length - 1);
+			          var funcExport = 'ExportToXML(' + forExport + ')';
+		            $('#export').attr('onclick',funcExport);
+								/* For button export */
 		            if (i > 1) {
 		                $('.button-edit').removeClass('active-icon');
+		                $('.button-edit').bind('click', function(e){
+								        e.preventDefault();
+										}) 
+
+										$('.buttonAdd').removeClass('active-icon');
+		                $('.buttonAdd').bind('click', function(e){
+								        e.preventDefault();
+										})
+
+
+										$('.circle-button').each(function(){
+											if ($(this).hasClass('buttonAdd') || $(this).hasClass('button-edit')) {
+													$(this).click(function(){
+														alert('выберите только один элемент')
+													})
+											};
+										})
+
 		            };
+		            if (i === 1) {
+		                $('.button-edit').unbind('click');
+		                $('.buttonAdd').unbind('click');
+
+		            };
+		        };
+		        if (i===0) {
+		        	$('.button-href-checkbox a').each(function () {
+			                var hrefButton = $(this).attr('href').split('?id=')[0] ;
+			                $(this).attr('href', hrefButton);
+			            })
+		          $('#export').attr('onclick','ExportToXML()');
+
+		          $('.button-href-checkbox').each(function(){
+		          	if (!$(this).hasClass('active-icon')) {
+		          		$(this).bind('click', function(e){
+							        e.preventDefault();
+									})
+		          	};
+		          })
+
+		          $('.buttonAdd').addClass('active-icon').unbind('click');
+
+		          
 		        };
 		    })
 
 		});
-  
+ 
 
 })
 
