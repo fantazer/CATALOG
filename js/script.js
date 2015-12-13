@@ -1,7 +1,15 @@
 
 $(document).ready(function(){
 
-	
+	//Slide right-menu
+	$('.toggle-rightTable').click(function(){
+		$(this).toggleClass('active-icon')
+		$('.right-slidePanel').animate({opacity: "toggle"})
+	})
+
+	$('.IconBackNormal').click(function(){
+		$('.toggle-rightTable').toggleClass('active-icon')
+	})
 
 
 	//fix active icon
@@ -143,187 +151,100 @@ $(document).ready(function(){
 		$('.tree').treegrid();
 		$('.treegrid-expander').click();
 
-    //get url from checkbox for treeTable
-    $('.button-href-checkbox a').bind('click', function(e){
-        e.preventDefault();
-		})
-
-    $('.buttonAdd a').unbind('click');
-
-		var valCheckboxItem;
-		$('.tree').click(function () {
-		    var valCheckbox = '';
-		    if ($('.tree input[type=checkbox]').is(":checked")) {
-		        $('.button-href-checkbox').addClass('active-icon');
-		    } else {
-		        $('.button-href-checkbox').removeClass('active-icon')
-		    }
-		    var i = 0;
-		    $('.tree input[type=checkbox]').each(function () {
-		    		
-		        if ($(this).is(':checked')) {
-				        	$('.button-href-checkbox').each(function(){
-			        			if($(this).hasClass('active-icon')){
-			        				$(this).find('a').unbind('click')
-			        			}
-			        		})
-
-			            i++;
-			            valCheckboxItem = $(this).val();
-			            valCheckbox = valCheckbox + valCheckboxItem + ',';
-
-			            $('.button-href-checkbox a').each(function () {
-			                var hrefButton = $(this).attr('href').split('?id=')[0] + '?id=';
-			                resuktHref = hrefButton + valCheckbox;
-			                resuktHref = resuktHref.substring(0, resuktHref.length - 1)
-			                $(this).attr('href', resuktHref);
-			            })
-
-			            /* For button export */
-			            var forExport = valCheckbox.substring(0, valCheckbox.length - 1);
-			            var funcExport = 'ExportToXML(' + forExport + ')';
-		            	$('#export').attr('onclick',funcExport);
-		            	/* For button export */
-		            	
-			            if (i > 1) {
-		                $('.button-edit').removeClass('active-icon');
-		                $('.button-edit').bind('click', function(e){
-								        e.preventDefault();
-										}) 
-
-										$('.buttonAdd').removeClass('active-icon');
-		                $('.buttonAdd').bind('click', function(e){
-								        e.preventDefault();
-										})
-
-
-										$('.circle-button').each(function(){
-											if ($(this).hasClass('buttonAdd') || $(this).hasClass('button-edit')) {
-													$(this).click(function(){
-														alert('Выберите только один элемент')
-													})
-											};
-										})
-
-		            };
-			            if (i === 1) {
-			                $('.button-edit').unbind('click');
-			                $('.buttonAdd').unbind('click');
-			            };
-		        }
-		        if (i===0) {
-		        	$('.button-href-checkbox a').each(function () {
-			                var hrefButton = $(this).attr('href').split('?id=')[0] ;
-			                $(this).attr('href', hrefButton);
-			            })
-		        	$('#export').attr('onclick','ExportToXML()');
-
-		        	 $('.button-href-checkbox').each(function(){
-		          	if (!$(this).hasClass('active-icon')) {
-		          		$(this).bind('click', function(e){
-							        e.preventDefault();
-									})
-		          	};
-		          })
-
-		        	 $('.circle-button').each(function(){
-											if ($(this).hasClass('button-edit') ) {
-													$(this).click(function(){
-														alert('Необходимо выбрать элемент для редактирования')
-													})
-											};
-							})
-
-		        };
-		    })
-
-		});
-
-    //get url from checkbox for dataTable
-		$('.page-card-datatable input[type=checkbox]').click(function () {
-		    var valCheckbox = '';
-		    if ($('.page-card-datatable input[type=checkbox]').is(":checked")) {
-		        $('.button-href-checkbox').addClass('active-icon');
-		    } else {
-		        $('.button-href-checkbox').removeClass('active-icon')
-		    }
-		    var i = 0;
-		    $('.page-card-datatable input[type=checkbox]').each(function () {
-		        if ($(this).is(':checked')) {
-			        	
-			        	$('.button-href-checkbox').each(function(){
-		        			if($(this).hasClass('active-icon')){
-		        				$(this).find('a').unbind('click')
-		        			}
-		        		})
-
-		            i++;
-		            valCheckboxItem = $(this).val();
-		            valCheckbox = valCheckbox + valCheckboxItem + ',';
-		            console.log(i);
-		            $('.button-href-checkbox a').each(function () {
-		                var hrefButton = $(this).attr('href').split('?id=')[0] + '?id=';
-		                resuktHref = hrefButton + valCheckbox;
-		                resuktHref = resuktHref.substring(0, resuktHref.length - 1)
-		                $(this).attr('href', resuktHref);
-		            })
-
-		            /* For button export */
-		            var forExport = valCheckbox.substring(0, valCheckbox.length - 1);
-			          var funcExport = 'ExportToXML(' + forExport + ')';
-		            $('#export').attr('onclick',funcExport);
-								/* For button export */
-		            if (i > 1) {
-		                $('.button-edit').removeClass('active-icon');
-		                $('.button-edit').bind('click', function(e){
-								        e.preventDefault();
-										}) 
-
-										$('.buttonAdd').removeClass('active-icon');
-		                $('.buttonAdd').bind('click', function(e){
-								        e.preventDefault();
-										})
-
-
-										$('.circle-button').each(function(){
-											if ($(this).hasClass('buttonAdd') || $(this).hasClass('button-edit')) {
-													$(this).click(function(){
-														alert('выберите только один элемент')
-													})
-											};
-										})
-
-		            };
-		            if (i === 1) {
-		                $('.button-edit').unbind('click');
-		                $('.buttonAdd').unbind('click');
-
-		            };
-		        };
-		        if (i===0) {
-		        	$('.button-href-checkbox a').each(function () {
-			                var hrefButton = $(this).attr('href').split('?id=')[0] ;
-			                $(this).attr('href', hrefButton);
-			            })
-		          $('#export').attr('onclick','ExportToXML()');
-
-		          $('.button-href-checkbox').each(function(){
-		          	if (!$(this).hasClass('active-icon')) {
-		          		$(this).bind('click', function(e){
-							        e.preventDefault();
-									})
-		          	};
-		          })
-
-		          $('.buttonAdd').addClass('active-icon').unbind('click');
-
-		          
-		        };
-		    })
-
-		});
+    
  
+ 		//Destroy liks
+    var unClick = function(el,message){
+    			$(el).parent().removeClass('active-icon')
+    			$(el).bind('click', function(e){
+    				alert(message);
+		        e.preventDefault();
 
+					})
+    }
+
+    //Hill link
+     var hillClick = function(el){
+	    	$(el).unbind('click');
+	    	$(el).parent().addClass('active-icon')
+		}
+
+		//Return urls
+    var returnUrl = function(){
+    	$('.button-href-checkbox a').each(function () {
+	        var hrefButton = $(this).attr('href').split('?id=')[0] ;
+	        $(this).attr('href', hrefButton);
+			})
+    }
+
+
+		//Не выбрано ни одного чекбокса
+		var zeroCheckbox = function(){
+				unClick('.IconEditNormal50','Необходимо выбрать объект для редактирования');
+		  	returnUrl();
+		  	$('#export').attr('onclick','ExportToXML()');
+			}
+		zeroCheckbox();
+
+		//Var for url
+    var valCheckbox = '';
+    var valCheckboxItem;
+    var getUrl = function(){
+	    	$('input[type=checkbox]').each(function () {
+			        if ($(this).is(':checked')) {
+								valCheckboxItem = $(this).val();
+					      valCheckbox = valCheckbox + valCheckboxItem + ',';
+
+					    	$('.button-href-checkbox a').each(function () {
+						        var hrefButton = $(this).attr('href').split('?id=')[0] + '?id=';
+						        resuktHref = hrefButton + valCheckbox;
+						        resuktHref = resuktHref.substring(0, resuktHref.length - 1)
+						        $(this).attr('href', resuktHref);
+						    })
+					    	console.log(valCheckbox)
+						    var forExport = valCheckbox.substring(0, valCheckbox.length - 1);
+					      var funcExport = 'ExportToXML(' + forExport + ')';
+					      $('#export').attr('onclick',funcExport);
+						  }
+	    })
+    }
+
+    //Control buttons
+		var lisenterTable = function(boxChekcbox){
+
+				$(boxChekcbox).click(function(){
+						var  numbChecked = 0;
+						valCheckbox = '';
+						numbChecked= $('input[type=checkbox]:checked').length
+				    console.log(numbChecked)
+
+						//не выбранно ни одного
+				    if (numbChecked === 0) {
+				    	 zeroCheckbox();
+				    };
+
+				    //выбран один
+				    if (numbChecked === 1) {
+				    	$('.button-edit').addClass('active-icon');
+				    	getUrl();
+				    	hillClick('.IconEditNormal50')
+				    	hillClick('.IconCreateServiceNormal50')
+				    };
+
+				    //выбрано более
+				    if (numbChecked > 1) {
+				    		getUrl();
+				    		unClick('.IconEditNormal50','Необходимо выбрать только один объект в качестве родительского');
+				    		unClick('.IconCreateServiceNormal50','Необходимо выбрать только один объект в качестве родительского');
+				    };
+
+
+			    })
+			    
+			}
+		
+		lisenterTable('.dataTable input[type=checkbox]');
+		
 })
 
 
