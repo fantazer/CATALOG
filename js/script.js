@@ -15,16 +15,27 @@ $(document).ready(function() {
         $(this).parent().toggleClass('tree-toggle-classTable')
     })
 
+    //Add paddings
+    var treeIndent = 40
+    $('[class*="treegrid-parent"]').each(function(){
+        $(this).find('.tree-indent-row').each(function(){
+            $(this).css('marginLeft',treeIndent);
+            treeIndent=treeIndent+40;
+        })
+        if (treeIndent>160) {treeIndent = 40};
+    })
+
+   
 
     var flag = false;
 
     //Slide right-menu
-    $('.toggle-rightTable').click(function() {
+	$('.toggle-rightTable').click(function(){
         $(this).toggleClass('active-icon')
         $('.right-slidePanel').animate({ opacity: "toggle" })
     })
 
-    $('.IconBackNormal').click(function() {
+	$('.IconBackNormal').click(function(){
         $('.toggle-rightTable').toggleClass('active-icon')
     })
 
@@ -39,7 +50,7 @@ $(document).ready(function() {
 
     //fix button
 
-    $('.always-activePrint').click(function() {
+	$('.always-activePrint').click(function(){
         var goodLink = $(this).attr('href');
         document.location.href = goodLink;
     });
@@ -117,7 +128,7 @@ $(document).ready(function() {
                 {
                     type: "select",
                     values: ['Новая', 'В эксплуатации', 'Разрабатывается', 'Выведена из эксплуатации']
-                }
+		}		
             ]
         });
         break;
@@ -140,7 +151,7 @@ $(document).ready(function() {
             },
             responsive: true
         }).columnFilter({
-            sPlaceHolder: 'head:after',
+    sPlaceHolder : 'head:after',
             aoColumns: [
                 { type: "text" },
                 { type: "text" },
@@ -172,8 +183,8 @@ $(document).ready(function() {
         }).columnFilter({
             sPlaceHolder: 'head:after',
             aoColumns: [
-                { type: "text" },
-                { type: "text" },
+                 { type: "text"},
+                 { type: "text"},
                 {
                     type: "select",
                     values: ['Новая', 'В эксплуатации', 'Разрабатывается', 'Выведена из эксплуатации']
@@ -182,10 +193,10 @@ $(document).ready(function() {
                     type: "select",
                     values: ['1-й уровень', '2-й уровень', '3-й уровень', '4-й уровень']
                 },
-                { type: "text" },
-                { type: "text" }
-            ]
-        });
+                 { type: "text"},
+                 { type: "text"}
+               ] 
+		});
         break;
     }
 
