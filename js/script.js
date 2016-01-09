@@ -16,15 +16,20 @@ $(document).ready(function() {
     })
 
     //Add paddings
-    var treeIndent = 40
-    $('[class*="treegrid-parent"]').each(function(){
-        $(this).find('.tree-indent-row').each(function(){
-            $(this).css('marginLeft',treeIndent);
-            treeIndent=treeIndent+40;
-        })
-        if (treeIndent>160) {treeIndent = 40};
-    })
-
+    $('.tree').find('tr').each(function(){
+       if ($(this).treegrid('getDepth')==1){
+            $(this).find('td').css('marginLeft',40);
+        }
+        if ($(this).treegrid('getDepth')==2){
+            $(this).find('td').css('marginLeft',80);
+        }
+        if ($(this).treegrid('getDepth')==3){
+            $(this).find('td').css('marginLeft',120);
+        }
+        if ($(this).treegrid('getDepth')==4){
+            $(this).find('td').css('marginLeft',160);
+        } 
+    });
    
 
     var flag = false;
