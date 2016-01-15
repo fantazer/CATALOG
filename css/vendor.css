@@ -1709,7 +1709,6 @@ a:hover {
 .head,
 .head-right,
 .main-cont-left,
-.page-card-datatable tr td:nth-child(1),
 .main-cont-right-breadcrumb-rightpart,
 .methamodel-head,
 .methamodel-head-item-textPush,
@@ -2017,12 +2016,11 @@ p {
 }
 .page-card-datatable tr td:nth-child(1) {
   color: #26abe2;
-  -webkit-align-items: flex-start;
-      -ms-flex-align: start;
-          align-items: flex-start;
 }
 .page-card-datatable tr td input {
   width: 50px;
+  margin-bottom: 30px;
+  float: left;
 }
 .page-card-datatable a {
   font-weight: 300;

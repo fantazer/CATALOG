@@ -16,7 +16,7 @@ $(document).ready(function() {
     })
 
     //Add paddings
-    $('.tree').find('tr').each(function(){
+    $('[class*="treegrid-parent"]').each(function(){
        if ($(this).treegrid('getDepth')==1){
             $(this).find('td').css('marginLeft',40);
         }
@@ -29,6 +29,7 @@ $(document).ready(function() {
         if ($(this).treegrid('getDepth')==4){
             $(this).find('td').css('marginLeft',160);
         } 
+        
     });
    
 
