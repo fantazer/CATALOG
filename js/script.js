@@ -255,7 +255,20 @@ $(document).ready(function() {
         allow_single_deselect: true
     });
 
-    cd
+    $('.head-right-avatarInfo').click(function() {
+        $('.head-right-avatar-menu').slideToggle()
+    })
+
+    $(document).click(function (event) {
+        if ($(event.target).closest('.head-right-avatar-menu').length == 0 
+            && $(event.target).attr('class') != 'head-right-avatarInfo'
+            && $(event.target).attr('class') != 'head-right-name'
+            && $(event.target).attr('class') != 'head-right-img'
+
+             ) {
+            $('.head-right-avatar-menu').hide();
+        }
+    });
 
     var figure = $('.methamodel-head-item-figure-block');
     var dropBlock = $('.figure-dropblock');
