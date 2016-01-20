@@ -255,9 +255,7 @@ $(document).ready(function() {
         allow_single_deselect: true
     });
 
-    $('.head-right-avatarInfo').click(function() {
-        $('.head-right-avatar-menu').slideToggle()
-    })
+    cd
 
     var figure = $('.methamodel-head-item-figure-block');
     var dropBlock = $('.figure-dropblock');
