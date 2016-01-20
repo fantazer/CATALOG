@@ -255,7 +255,7 @@ $(document).ready(function() {
         allow_single_deselect: true
     });
 
-    $('.head-right-avatar').click(function() {
+    $('.head-right-avatarInfo').click(function() {
         $('.head-right-avatar-menu').slideToggle()
     })
 
