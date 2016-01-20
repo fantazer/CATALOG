@@ -1970,6 +1970,9 @@ a:hover {
   font-family: 'Open Sans Condensed', sans-serif;
   margin-left: 20px;
 }
+.head-right {
+  float: right;
+}
 .head-right img {
   margin: 0 20px;
 }
