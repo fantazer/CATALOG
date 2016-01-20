@@ -1,10 +1,22 @@
 
 $(document).ready(function() {
 
+    //left menu 
+    $('.left-nsi').click(function(){
+        $('.main-cont-left-menu-item-nsi').slideToggle();
+        $(this).find('.main-cont-left-menu-arrow').toggle();
+    })
+
+    $('.left-meta').click(function(){
+        $('.main-cont-left-menu-item-meta').slideToggle();
+        $(this).find('.main-cont-left-menu-arrow').toggle();
+    })
+    //left menu  - end
+
     $('.tree').treegrid();
     $('.treegrid-expander').click();
 
-    $('[class*="treegrid-parent"]').find('.tree-head').css('background', '#67778E')
+    $('[class*="treegrid-parent"]').find('.tree-head').css('background', '#CEDAE9')
     //tree last element
     $('.tree tr .table').each(function() {
         var trTable = $(this).parent().parent();
