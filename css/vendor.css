@@ -2726,7 +2726,7 @@ p {
   height: 15px;
   position: absolute;
   bottom: -5px;
-  left: 95px;
+  left: 60px;
   background: #449d44;
   -webkit-transform: rotate(45deg);
       -ms-transform: rotate(45deg);
@@ -2796,6 +2796,7 @@ p {
 }
 .tree-indent-row {
   display: inline-block;
+  display: block !important;
 }
 .tree {
   overflow: hidden !important;
