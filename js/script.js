@@ -1,6 +1,7 @@
 
 $(document).ready(function() {
 
+
     //left menu 
     $('.left-nsi').click(function(){
         $('.main-cont-left-menu-item-nsi').slideToggle();
@@ -12,6 +13,12 @@ $(document).ready(function() {
         $(this).find('.main-cont-left-menu-arrow').toggle();
     })
     //left menu  - end
+    $('.main-cont-left-menu-item-sub').each(function(){
+        if ($(this).hasClass('activator-left')) {
+            $(this).parent().css('display','block');
+            $(this).parent().prev().find('.main-cont-left-menu-arrow').toggle()
+        };
+    })
 
     $('.tree').treegrid();
     $('.treegrid-expander').click();
