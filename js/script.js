@@ -1,7 +1,11 @@
 
 $(document).ready(function() {
 
-
+    $('#getModal').click(function(){
+        $('#myModaler').modal()
+    })
+    //Init jquery select
+    $('#select-editor').fancyspinbox();
     //left menu 
     $('.left-nsi').click(function(){
         $('.main-cont-left-menu-item-nsi').slideToggle();
@@ -21,6 +25,7 @@ $(document).ready(function() {
     })
 
     $('.tree').treegrid();
+    $('.tree-editor').treegrid();
     $('.treegrid-expander').click();
 
     $('[class*="treegrid-parent"]').find('.tree-head').css('background', '#CEDAE9')
@@ -80,12 +85,12 @@ $(document).ready(function() {
         document.location.href = goodLink;
     });
 
-    //инициализация таблиц и добавление комбо-боксов в зависимости от контроллера
     var locarr = window.location.pathname.split('/');
     var controllername = locarr[1];
     if (controllername === "") {
         controllername = "Services";
     }
+
     switch (controllername) {
     case 'Services':
         $('.bs3-dataTable').dataTable({
@@ -100,9 +105,9 @@ $(document).ready(function() {
                     "sFirst": "Первая",
                     "sLast": "Посл.",
                     "sNext": "Вперед",
-                    "sPrevious": "Назад"
+                    "sPrevious": "Назад",
                 },
-                "bSortable": false
+                "bSortable": false,
             },
             responsive: true
         }).columnFilter({
@@ -140,9 +145,9 @@ $(document).ready(function() {
                     "sFirst": "Первая",
                     "sLast": "Посл.",
                     "sNext": "Вперед",
-                    "sPrevious": "Назад"
+                    "sPrevious": "Назад",
                 },
-                "bSortable": false
+                "bSortable": false,
             },
             responsive: true
         }).columnFilter({
@@ -170,9 +175,9 @@ $(document).ready(function() {
                     "sFirst": "Первая",
                     "sLast": "Посл.",
                     "sNext": "Вперед",
-                    "sPrevious": "Назад"
+                    "sPrevious": "Назад",
                 },
-                "bSortable": false
+                "bSortable": false,
             },
             responsive: true
         }).columnFilter({
@@ -200,9 +205,9 @@ $(document).ready(function() {
                     "sFirst": "Первая",
                     "sLast": "Посл.",
                     "sNext": "Вперед",
-                    "sPrevious": "Назад"
+                    "sPrevious": "Назад",
                 },
-                "bSortable": false
+                "bSortable": false,
             },
             responsive: true
         }).columnFilter({
@@ -229,13 +234,13 @@ $(document).ready(function() {
 //date Picker
     $('#date-event-one').datetimepicker({
         locale: 'ru',
-        format: 'DD.MM.YYYY'
+        format: 'DD/MM/YYYY'
     });
 
     //date Picker
     $('.date-event').datetimepicker({
         locale: 'ru',
-        format: 'DD.MM.YYYY'
+        format: 'DD/MM/YYYY'
     });
 
     //date Picker hours
@@ -301,7 +306,8 @@ $(document).ready(function() {
     $('.row-catalog-date-pick-toggle').click(function() {
         $('.row-catalog-date-pick-toggle-filter').slideToggle();
         $('.row-catalog-date-pick-toggle').toggleClass('filter-color');
-    });
+
+    })
 
     /*var iconBread = $('.breadcrumb-button');
     iconBread.click(function(){
@@ -316,39 +322,39 @@ $(document).ready(function() {
         $(".breadcrumb-button-two").removeClass("active-icon");
         $('.hidden-table-toggle-one').toggleClass("hidden");
         $('.hidden-table-toggle-two').addClass("hidden");
-    });
+    })
 
     $('.breadcrumb-button-two').click(function() {
         $(this).toggleClass("active-icon");
         $(".breadcrumb-button-one").removeClass("active-icon");
         $('.hidden-table-toggle-two').toggleClass("hidden");
         $('.hidden-table-toggle-one').addClass("hidden");
-    });
+    })
 
 
 //Destroy liks
     var unClick = function(el, message) {
-        $(el).parent().removeClass('active-icon');
+        $(el).parent().removeClass('active-icon')
         $(el).bind('click', function(e) {
             alert(message);
             e.preventDefault();
 
-        });
-    };
+        })
+    }
 
     //Hill link
     var hillClick = function(el) {
         $(el).unbind('click');
-        $(el).parent().addClass('active-icon');
-    };
+        $(el).parent().addClass('active-icon')
+    }
 
     //Return urls
     var returnUrl = function() {
         $('.button-href-checkbox a').each(function() {
             var hrefButton = $(this).attr('href').split('?id=')[0];
             $(this).attr('href', hrefButton);
-        });
-    };
+        })
+    }
 
 
     //Не выбрано ни одного чекбокса
@@ -465,9 +471,9 @@ $(document).ready(function() {
                                     "sFirst": "Первая",
                                     "sLast": "Посл.",
                                     "sNext": "Вперед",
-                                    "sPrevious": "Назад"
+                                    "sPrevious": "Назад",
                                 },
-                                "bSortable": false
+                                "bSortable": false,
                             },
                             responsive: true
                         }).columnFilter({
@@ -505,9 +511,9 @@ $(document).ready(function() {
                                     "sFirst": "Первая",
                                     "sLast": "Посл.",
                                     "sNext": "Вперед",
-                                    "sPrevious": "Назад"
+                                    "sPrevious": "Назад",
                                 },
-                                "bSortable": false
+                                "bSortable": false,
                             },
                             responsive: true
                         }).columnFilter({
@@ -535,9 +541,9 @@ $(document).ready(function() {
                                     "sFirst": "Первая",
                                     "sLast": "Посл.",
                                     "sNext": "Вперед",
-                                    "sPrevious": "Назад"
+                                    "sPrevious": "Назад",
                                 },
-                                "bSortable": false
+                                "bSortable": false,
                             },
                             responsive: true
                         }).columnFilter({
@@ -565,9 +571,9 @@ $(document).ready(function() {
                                     "sFirst": "Первая",
                                     "sLast": "Посл.",
                                     "sNext": "Вперед",
-                                    "sPrevious": "Назад"
+                                    "sPrevious": "Назад",
                                 },
-                                "bSortable": false
+                                "bSortable": false,
                             },
                             responsive: true
                         }).columnFilter({
@@ -603,19 +609,15 @@ $(document).ready(function() {
         var customers = [];
         $('#Customers_chosen a.search-choice-close').each(function() {
             var temp = $(this).attr("data-option-array-index");
-            temp = parseInt(temp) + 1;
-            var val = $('#Customers option:nth-child(' + temp + ')').attr("value");
-            customers.push(val);
-        });
+            customers.push(temp);
+        })
         $('#CustomerList').val(customers.join(','));
 
         var users = [];
         $('#Users_chosen a.search-choice-close').each(function() {
             var temp = $(this).attr("data-option-array-index");
-            temp = parseInt(temp) + 1;
-            var val = $('#Users option:nth-child('+temp+')').attr("value");
-            users.push(val);
-        });
+            users.push(temp);
+        })
         $('#UserList').val(users.join(','));
 
         var temp = '/' + controllername + '/Filter';
@@ -764,92 +766,78 @@ $(document).ready(function() {
             });
     });
 
+    $('#filter_apply_ITSystems').click(function() {
+        filterapply('ITSystems');
+    });
+    $('#filter_apply_Services').click(function () {
+        filterapply('Services');
+    });
+    $('#filter_apply_QualifierProducts').click(function () {
+        filterapply('QualifierProducts');
+    });
+    $('#filter_apply_QualifierOperations').click(function () {
+        filterapply('QualifierOperations');
+    });
+
+    $('#filterflatapply').click(function () {
+        var customers = [];
+        $('#Customers_chosen a.search-choice-close').each(function () {
+            var temp = $(this).attr("data-option-array-index");
+            customers.push(temp);
+        })
+        $('#CustomerList').val(customers.join(','));
+
+        var users = [];
+        $('#Users_chosen a.search-choice-close').each(function () {
+            var temp = $(this).attr("data-option-array-index");
+            users.push(temp);
+        })
+        $('#UserList').val(users.join(','));
+
+        var temp = window.location.pathname;
+
+        $.post('/Services/FilterFlat', $('#filter-form').serialize())
+            .done(function(data) {
+                $('.filter-result-container').html(data);
+                $('.bs3-dataTable').dataTable(
+                    {
+                        "oLanguage": {
+                            "sLengthMenu": "_MENU_ записей на страницу",
+                            "sSearch": "Поиск:",
+                            "sZeroRecords": "Ничего не найдено - извините",
+                            "sInfo": "Показано с _START_ по _END_ из _TOTAL_ записей",
+                            "sInfoEmpty": "Показано с 0 по 0 из 0 записей",
+			        "sInfoFiltered": "(отфильтровано из _MAX_ записей)",
+			        "oPaginate": {
+			            "sFirst": "Первая",
+			            "sLast": "Посл.",
+			            "sNext": "Вперед",
+			            "sPrevious": "Назад",
+			        },
+			        "bSortable": false,
+			    },
+			    responsive: true
+			}
+	).columnFilter({
+	    sPlaceHolder: 'head:after',
+	    aoColumns: [{ type: "text" },
+                     { type: "text" },
+                     { type: "text" },
+                     { type: "text" },
+                     { type: "text" }
+	    ]
+	});
+            })
+    });
+
     //т.к. chosen устанавливает размер полей при запуске, то нельзя скрыть панель фильтра сразу, иначе он устанавливает размер в 0
     $('.row-catalog-date-pick-toggle-filter').css("display", "none");
 
     //"многооконный режим"
-    $('a').not('.samewindow').click(function() {
+    $('a').click(function () {
         $(this).attr("target", "_blank");
-    });
+    })
 
-    //Добавление кнопок "Выбрать все" и "Убрать все" на multiple select
-    $("select").on("chosen:showing_dropdown", function (evnt, params) {
-        var chosen = params.chosen,
-            $dropdown = $(chosen.dropdown),
-            $field = $(chosen.form_field);
-        if (!chosen.__customButtonsInitilized) {
-            chosen.__customButtonsInitilized = true;
-            var contained = function (el) {
-                var container = document.createElement("div");
-                container.appendChild(el);
-                return container;
-            }
-            var width = $dropdown.width();
-            var opts = chosen.options || {},
-                showBtnsTresshold = opts.disable_select_all_none_buttons_tresshold || 0;
-            optionsCount = $field.children().length,
-            selectAllText = opts.select_all_text || 'Выбрать все',
-            selectNoneText = opts.uncheck_all_text || 'Убрать все';
-            if (chosen.is_multiple && optionsCount >= showBtnsTresshold) {
-                var selectAllEl = document.createElement("a"),
-                    selectAllElContainer = contained(selectAllEl),
-                    selectNoneEl = document.createElement("a"),
-                    selectNoneElContainer = contained(selectNoneEl);
-                selectAllEl.appendChild(document.createTextNode(selectAllText));
-                selectNoneEl.appendChild(document.createTextNode(selectNoneText));
-                $dropdown.prepend("<div class='ui-chosen-spcialbuttons-foot' style='clear:both;border-bottom: 1px solid black;'></div>");
-                $dropdown.prepend(selectNoneElContainer);
-                $dropdown.prepend(selectAllElContainer);
-                var $selectAllEl = $(selectAllEl),
-                    $selectAllElContainer = $(selectAllElContainer),
-                    $selectNoneEl = $(selectNoneEl),
-                    $selectNoneElContainer = $(selectNoneElContainer);
-                var reservedSpacePerComp = (width - 25) / 2;
-                $selectNoneElContainer.addClass("ui-chosen-selectNoneBtnContainer")
-                    .css("float", "right").css("padding", "5px 8px 5px 0px")
-                    .css("max-width", reservedSpacePerComp + "px")
-                    .css("max-height", "30px").css("overflow", "hidden");
-                $selectAllElContainer.addClass("ui-chosen-selectAllBtnContainer")
-                    .css("float", "left").css("padding", "5px 5px 5px 7px")
-                    .css("max-width", reservedSpacePerComp + "px")
-                    .css("max-height", "30px").css("overflow", "hidden");
-                $selectAllEl.on("click", function (e) {
-                    e.preventDefault();
-                    $field.children().prop('selected', true);
-                    $field.trigger('chosen:updated');
-                    return false;
-                });
-                $selectNoneEl.on("click", function (e) {
-                    e.preventDefault();
-                    $field.children().prop('selected', false);
-                    $field.trigger('chosen:updated');
-                    return false;
-                });
-            }
-        }
-    });
-
-    $('input[name="EverydayAvailable"]').change(function() {
-        $('.available-time-group').toggleClass('disable-inline-input-row');
-        $('.time-available').each(function() {
-            if ($(this).prop("disabled")) {
-                $(this).prop("disabled", false);
-            } else {
-                $(this).prop("disabled", true);
-            }
-        });
-    });
-
-    $('input[name="EverydaySupport"]').change(function () {
-        $('.support-time-group').toggleClass('disable-inline-input-row');
-        $('.time-support').each(function () {
-            if ($(this).prop("disabled")) {
-                $(this).prop("disabled", false);
-            } else {
-                $(this).prop("disabled", true);
-            }
-        });
-    });
 })
 
 
