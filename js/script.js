@@ -79,9 +79,10 @@ $(document).ready(function() {
     if (controllername === "") {
         controllername = "Services";
     }
-    switch (controllername) {
-    case 'Services':
-        $('.bs3-dataTable').dataTable({
+
+    var initializeTable = function () {
+
+        $('.service-table').dataTable({
             "oLanguage": {
                 "sLengthMenu": "_MENU_ записей на страницу",
                 "sSearch": "Поиск:",
@@ -119,9 +120,8 @@ $(document).ready(function() {
                 { type: "text" }
             ]
         });
-        break;
-    case 'QualifierOperations':
-        $('.bs3-dataTable').dataTable({
+
+        $('.qual-oper-table').dataTable({
             "oLanguage": {
                 "sLengthMenu": "_MENU_ записей на страницу",
                 "sSearch": "Поиск:",
@@ -140,36 +140,6 @@ $(document).ready(function() {
             responsive: true
         }).columnFilter({
             sPlaceHolder: 'head:after',
-            aoColumns: [
-                { type: "text" },
-                { type: "text" },
-                {
-                    type: "select",
-                    values: ['Новая', 'В эксплуатации', 'Разрабатывается', 'Выведена из эксплуатации']
-		}		
-            ]
-        });
-        break;
-    case 'QualifierProducts':
-        $('.bs3-dataTable').dataTable({
-            "oLanguage": {
-                "sLengthMenu": "_MENU_ записей на страницу",
-                "sSearch": "Поиск:",
-                "sZeroRecords": "Ничего не найдено - извините",
-                "sInfo": "Показано с _START_ по _END_ из _TOTAL_ записей",
-                "sInfoEmpty": "Показано с 0 по 0 из 0 записей",
-                "sInfoFiltered": "(отфильтровано из _MAX_ записей)",
-                "oPaginate": {
-                    "sFirst": "Первая",
-                    "sLast": "Посл.",
-                    "sNext": "Вперед",
-                    "sPrevious": "Назад"
-                },
-                "bSortable": false
-            },
-            responsive: true
-        }).columnFilter({
-    sPlaceHolder : 'head:after',
             aoColumns: [
                 { type: "text" },
                 { type: "text" },
@@ -179,9 +149,8 @@ $(document).ready(function() {
                 }
             ]
         });
-        break;
-    case 'ITSystems':
-        $('.bs3-dataTable').dataTable({
+
+        $('.qual-prod-table').dataTable({
             "oLanguage": {
                 "sLengthMenu": "_MENU_ записей на страницу",
                 "sSearch": "Поиск:",
@@ -201,8 +170,37 @@ $(document).ready(function() {
         }).columnFilter({
             sPlaceHolder: 'head:after',
             aoColumns: [
-                 { type: "text"},
-                 { type: "text"},
+                { type: "text" },
+                { type: "text" },
+                {
+                    type: "select",
+                    values: ['Новая', 'В эксплуатации', 'Разрабатывается', 'Выведена из эксплуатации']
+                }
+            ]
+        });
+
+        $('.its-table').dataTable({
+            "oLanguage": {
+                "sLengthMenu": "_MENU_ записей на страницу",
+                "sSearch": "Поиск:",
+                "sZeroRecords": "Ничего не найдено - извините",
+                "sInfo": "Показано с _START_ по _END_ из _TOTAL_ записей",
+                "sInfoEmpty": "Показано с 0 по 0 из 0 записей",
+                "sInfoFiltered": "(отфильтровано из _MAX_ записей)",
+                "oPaginate": {
+                    "sFirst": "Первая",
+                    "sLast": "Посл.",
+                    "sNext": "Вперед",
+                    "sPrevious": "Назад"
+                },
+                "bSortable": false
+            },
+            responsive: true
+        }).columnFilter({
+            sPlaceHolder: 'head:after',
+            aoColumns: [
+                { type: "text" },
+                { type: "text" },
                 {
                     type: "select",
                     values: ['Новая', 'В эксплуатации', 'Разрабатывается', 'Выведена из эксплуатации']
@@ -211,12 +209,102 @@ $(document).ready(function() {
                     type: "select",
                     values: ['1-й уровень', '2-й уровень', '3-й уровень', '4-й уровень']
                 },
-                 { type: "text"},
-                 { type: "text"}
-               ] 
-		});
-        break;
+                { type: "text" },
+                { type: "text" }
+            ]
+        });
+
+        $('.pa-table').dataTable({
+            "oLanguage": {
+                "sLengthMenu": "_MENU_ записей на страницу",
+                "sSearch": "Поиск:",
+                "sZeroRecords": "Ничего не найдено - извините",
+                "sInfo": "Показано с _START_ по _END_ из _TOTAL_ записей",
+                "sInfoEmpty": "Показано с 0 по 0 из 0 записей",
+                "sInfoFiltered": "(отфильтровано из _MAX_ записей)",
+                "oPaginate": {
+                    "sFirst": "Первая",
+                    "sLast": "Посл.",
+                    "sNext": "Вперед",
+                    "sPrevious": "Назад"
+                },
+                "bSortable": false
+            },
+            responsive: true
+        }).columnFilter({
+            sPlaceHolder: 'head:after',
+            aoColumns: [
+                { type: "text" },
+                { type: "text" },
+                { type: "text" },
+                { type: "text" },
+                { type: "text" }
+            ]
+        });
+        $('.log-table').dataTable({
+            "oLanguage": {
+                "sLengthMenu": "_MENU_ записей на страницу",
+                "sSearch": "Поиск:",
+                "sZeroRecords": "Ничего не найдено - извините",
+                "sInfo": "Показано с _START_ по _END_ из _TOTAL_ записей",
+                "sInfoEmpty": "Показано с 0 по 0 из 0 записей",
+                "sInfoFiltered": "(отфильтровано из _MAX_ записей)",
+                "oPaginate": {
+                    "sFirst": "Первая",
+                    "sLast": "Посл.",
+                    "sNext": "Вперед",
+                    "sPrevious": "Назад"
+                },
+                "bSortable": false
+            },
+            responsive: true
+        }).columnFilter({
+            sPlaceHolder: 'head:after',
+            aoColumns: [
+                { type: "text" },
+                { type: "text" },
+                { type: "text" },
+                { type: "text" },
+                { type: "text" }
+            ]
+        });
+        $('.sla-table').dataTable({
+            "oLanguage": {
+                "sLengthMenu": "_MENU_ записей на страницу",
+                "sSearch": "Поиск:",
+                "sZeroRecords": "Ничего не найдено - извините",
+                "sInfo": "Показано с _START_ по _END_ из _TOTAL_ записей",
+                "sInfoEmpty": "Показано с 0 по 0 из 0 записей",
+                "sInfoFiltered": "(отфильтровано из _MAX_ записей)",
+                "oPaginate": {
+                    "sFirst": "Первая",
+                    "sLast": "Посл.",
+                    "sNext": "Вперед",
+                    "sPrevious": "Назад"
+                },
+                "bSortable": false
+            },
+            responsive: true
+        }).columnFilter({
+            sPlaceHolder: 'head:after',
+            aoColumns: [
+                { type: "text" },
+                { type: "text" },
+                {
+                    type: "select",
+                    values: ['На согласовании', 'Новое', 'Разрабатывается']
+                },
+                {
+                    type: "select",
+                    values: ['Конечная', 'Системная']
+                },
+                { type: "text" },
+                { type: "text" },
+                { type: "text" }
+            ]
+        });
     }
+    initializeTable();
 
 
 //date Picker
@@ -264,6 +352,7 @@ $(document).ready(function() {
             && $(event.target).attr('class') != 'head-right-avatarInfo'
             && $(event.target).attr('class') != 'head-right-name'
             && $(event.target).attr('class') != 'head-right-img'
+            && $(event.target).attr('class') != 'img-thumbnail'
 
              ) {
             $('.head-right-avatar-menu').hide();
@@ -372,7 +461,13 @@ $(document).ready(function() {
                 var forExport = valCheckbox.substring(0, valCheckbox.length - 1);
                 var funcExport = 'ExportToXML(\"' + forExport + '\")';
                 $('#export').attr('onclick', funcExport);
-                $('#docxexport').attr('href', currentHref + "?param=" + forExport);
+                var href = $('#docxexport').attr('href');
+                if(href != null && href.indexOf("snapid") > -1)
+                {
+                    $('#docxexport').attr('href', currentHref + "&param=" + forExport);
+                } else {
+                    $('#docxexport').attr('href', currentHref + "?param=" + forExport);
+                }
             }
         })
     }
@@ -405,7 +500,7 @@ $(document).ready(function() {
                 getUrl();
                 if (!flag) {
                     flag = true;
-                    unClick('#edittable', 'Необходимо выбрать только один объект в качестве родительского');
+                    unClick('#edittable', 'Необходимо выбрать только один объект для редактирования');
                     unClick('.IconCreateServiceNormal50', 'Необходимо выбрать только один объект в качестве родительского');
                 }
             };
@@ -421,167 +516,25 @@ $(document).ready(function() {
 
     //clearsearch
     $(".clearable").clearSearch();
-    //$('.clearable').width('200px').change();
     $('.clear_input').click(function() {
-        $.post('/Services/Search')
-            .done(function(data) {
-                $('.tree').html(data);
-                $('.tree').treegrid();
-                $('.treegrid-expander').click();
-                lisenterTable('.dataTable');
-                lisenterTable('.tree input[type=checkbox]');
+        $.post('/' + controllername + '/Search', $('#filter-form').serialize())
+            .done(function (data) {
+                $('.filter-result-container').html(data);
+                initializeTable();
             })
             .fail(function(xhr) {
                 document.clear();
                 document.write(xhr.responseText);
                 document.close();
             });
-    })
+    });
 
     //поиск по имени
     $('#searchbutton').click(function() {
-            var name = document.getElementById('Name').value;
-            $.post('/' + controllername + '/Search', { name: name })
-                .done(function(data) {
-                    $('.filter-result-container').html(data);
-                    switch (controllername) {
-                    case 'Services':
-                        $('.bs3-dataTable').dataTable({
-                            "oLanguage": {
-                                "sLengthMenu": "_MENU_ записей на страницу",
-                                "sSearch": "Поиск:",
-                                "sZeroRecords": "Ничего не найдено - извините",
-                                "sInfo": "Показано с _START_ по _END_ из _TOTAL_ записей",
-                                "sInfoEmpty": "Показано с 0 по 0 из 0 записей",
-                                "sInfoFiltered": "(отфильтровано из _MAX_ записей)",
-                                "oPaginate": {
-                                    "sFirst": "Первая",
-                                    "sLast": "Посл.",
-                                    "sNext": "Вперед",
-                                    "sPrevious": "Назад"
-                                },
-                                "bSortable": false
-                            },
-                            responsive: true
-                        }).columnFilter({
-                            sPlaceHolder: 'head:after',
-                            aoColumns: [
-                                { type: "text" },
-                                { type: "text" },
-                                {
-                                    type: "select",
-                                    values: ['Новая', 'Разрабатывается', 'В эксплуатации', 'Предоставление предостановлено', 'Не предоставляется']
-                                },
-                                {
-                                    type: "select",
-                                    values: ['Конечная', 'Системная']
-                                },
-                                {
-                                    type: "select",
-                                    values: ['1-й уровень', '2-й уровень', '3-й уровень', '4-й уровень']
-                                },
-                                { type: "text" },
-                                { type: "text" }
-                            ]
-                        });
-                        break;
-                    case 'QualifierOperations':
-                        $('.bs3-dataTable').dataTable({
-                            "oLanguage": {
-                                "sLengthMenu": "_MENU_ записей на страницу",
-                                "sSearch": "Поиск:",
-                                "sZeroRecords": "Ничего не найдено - извините",
-                                "sInfo": "Показано с _START_ по _END_ из _TOTAL_ записей",
-                                "sInfoEmpty": "Показано с 0 по 0 из 0 записей",
-                                "sInfoFiltered": "(отфильтровано из _MAX_ записей)",
-                                "oPaginate": {
-                                    "sFirst": "Первая",
-                                    "sLast": "Посл.",
-                                    "sNext": "Вперед",
-                                    "sPrevious": "Назад"
-                                },
-                                "bSortable": false
-                            },
-                            responsive: true
-                        }).columnFilter({
-                            sPlaceHolder: 'head:after',
-                            aoColumns: [
-                                { type: "text" },
-                                { type: "text" },
-                                {
-                                    type: "select",
-                                    values: ['Новая', 'В эксплуатации', 'Разрабатывается', 'Выведена из эксплуатации']
-                                }
-                            ]
-                        });
-                        break;
-                    case 'QualifierProducts':
-                        $('.bs3-dataTable').dataTable({
-                            "oLanguage": {
-                                "sLengthMenu": "_MENU_ записей на страницу",
-                                "sSearch": "Поиск:",
-                                "sZeroRecords": "Ничего не найдено - извините",
-                                "sInfo": "Показано с _START_ по _END_ из _TOTAL_ записей",
-                                "sInfoEmpty": "Показано с 0 по 0 из 0 записей",
-                                "sInfoFiltered": "(отфильтровано из _MAX_ записей)",
-                                "oPaginate": {
-                                    "sFirst": "Первая",
-                                    "sLast": "Посл.",
-                                    "sNext": "Вперед",
-                                    "sPrevious": "Назад"
-                                },
-                                "bSortable": false
-                            },
-                            responsive: true
-                        }).columnFilter({
-                            sPlaceHolder: 'head:after',
-                            aoColumns: [
-                                { type: "text" },
-                                { type: "text" },
-                                {
-                                    type: "select",
-                                    values: ['Новая', 'В эксплуатации', 'Разрабатывается', 'Выведена из эксплуатации']
-                                }
-                            ]
-                        });
-                        break;
-                    case 'ITSystems':
-                        $('.bs3-dataTable').dataTable({
-                            "oLanguage": {
-                                "sLengthMenu": "_MENU_ записей на страницу",
-                                "sSearch": "Поиск:",
-                                "sZeroRecords": "Ничего не найдено - извините",
-                                "sInfo": "Показано с _START_ по _END_ из _TOTAL_ записей",
-                                "sInfoEmpty": "Показано с 0 по 0 из 0 записей",
-                                "sInfoFiltered": "(отфильтровано из _MAX_ записей)",
-                                "oPaginate": {
-                                    "sFirst": "Первая",
-                                    "sLast": "Посл.",
-                                    "sNext": "Вперед",
-                                    "sPrevious": "Назад"
-                                },
-                                "bSortable": false
-                            },
-                            responsive: true
-                        }).columnFilter({
-                            sPlaceHolder: 'head:after',
-                            aoColumns: [
-                                { type: "text" },
-                                { type: "text" },
-                                {
-                                    type: "select",
-                                    values: ['Новая', 'В эксплуатации', 'Разрабатывается', 'Выведена из эксплуатации']
-                                },
-                                {
-                                    type: "select",
-                                    values: ['1-й уровень', '2-й уровень', '3-й уровень', '4-й уровень']
-                                },
-                                { type: "text" },
-                                { type: "text" }
-                            ]
-                        });
-                        break;
-                    }
+        $.post('/' + controllername + '/Search', $('#filter-form').serialize())
+            .done(function (data) {
+                $('.filter-result-container').html(data);
+                initializeTable();
                 })
                 .fail(function(xhr) {
                     document.clear();
@@ -611,154 +564,28 @@ $(document).ready(function() {
         });
         $('#UserList').val(users.join(','));
 
+        var itsystems = [];
+        $('#ITSystem_chosen a.search-choice-close').each(function () {
+            var temp = $(this).attr("data-option-array-index");
+            temp = parseInt(temp) + 1;
+            var val = $('#ITSystem option:nth-child(' + temp + ')').attr("value");
+            itsystems.push(val);
+        });
+        $('#ITSystemList').val(itsystems.join(','));
+
         var temp = '/' + controllername + '/Filter';
 
         $.post(temp, $('#filter-form').serialize())
             .done(function(data) {
                 $('.filter-result-container').html(data);
-                switch (controllername) {
-                case 'Services':
-                    $('.bs3-dataTable').dataTable({
-                        "oLanguage": {
-                            "sLengthMenu": "_MENU_ записей на страницу",
-                            "sSearch": "Поиск:",
-                            "sZeroRecords": "Ничего не найдено - извините",
-                            "sInfo": "Показано с _START_ по _END_ из _TOTAL_ записей",
-                            "sInfoEmpty": "Показано с 0 по 0 из 0 записей",
-                            "sInfoFiltered": "(отфильтровано из _MAX_ записей)",
-                            "oPaginate": {
-                                "sFirst": "Первая",
-                                "sLast": "Посл.",
-                                "sNext": "Вперед",
-                                "sPrevious": "Назад",
-                            },
-                            "bSortable": false,
-                        },
-                        responsive: true
-                    }).columnFilter({
-                        sPlaceHolder: 'head:after',
-                        aoColumns: [
-                            { type: "text" },
-                            { type: "text" },
-                            {
-                                type: "select",
-                                values: ['Новая', 'Разрабатывается', 'В эксплуатации', 'Предоставление предостановлено', 'Не предоставляется']
-                            },
-                            {
-                                type: "select",
-                                values: ['Конечная', 'Системная']
-                            },
-                            {
-                                type: "select",
-                                values: ['1-й уровень', '2-й уровень', '3-й уровень', '4-й уровень']
-                            },
-                            { type: "text" },
-                            { type: "text" }
-                        ]
-                    });
-                    break;
-                case 'QualifierOperations':
-                    $('.bs3-dataTable').dataTable({
-                        "oLanguage": {
-                            "sLengthMenu": "_MENU_ записей на страницу",
-                            "sSearch": "Поиск:",
-                            "sZeroRecords": "Ничего не найдено - извините",
-                            "sInfo": "Показано с _START_ по _END_ из _TOTAL_ записей",
-                            "sInfoEmpty": "Показано с 0 по 0 из 0 записей",
-                            "sInfoFiltered": "(отфильтровано из _MAX_ записей)",
-                            "oPaginate": {
-                                "sFirst": "Первая",
-                                "sLast": "Посл.",
-                                "sNext": "Вперед",
-                                "sPrevious": "Назад",
-                            },
-                            "bSortable": false,
-                        },
-                        responsive: true
-                    }).columnFilter({
-                        sPlaceHolder: 'head:after',
-                        aoColumns: [
-                            { type: "text" },
-                            { type: "text" },
-                            {
-                                type: "select",
-                                values: ['Новая', 'В эксплуатации', 'Разрабатывается', 'Выведена из эксплуатации']
-                            }
-                        ]
-                    });
-                    break;
-                case 'QualifierProducts':
-                    $('.bs3-dataTable').dataTable({
-                        "oLanguage": {
-                            "sLengthMenu": "_MENU_ записей на страницу",
-                            "sSearch": "Поиск:",
-                            "sZeroRecords": "Ничего не найдено - извините",
-                            "sInfo": "Показано с _START_ по _END_ из _TOTAL_ записей",
-                            "sInfoEmpty": "Показано с 0 по 0 из 0 записей",
-                            "sInfoFiltered": "(отфильтровано из _MAX_ записей)",
-                            "oPaginate": {
-                                "sFirst": "Первая",
-                                "sLast": "Посл.",
-                                "sNext": "Вперед",
-                                "sPrevious": "Назад",
-                            },
-                            "bSortable": false,
-                        },
-                        responsive: true
-                    }).columnFilter({
-                        sPlaceHolder: 'head:after',
-                        aoColumns: [
-                            { type: "text" },
-                            { type: "text" },
-                            {
-                                type: "select",
-                                values: ['Новая', 'В эксплуатации', 'Разрабатывается', 'Выведена из эксплуатации']
-                            }
-                        ]
-                    });
-                    break;
-                case 'ITSystems':
-                    $('.bs3-dataTable').dataTable({
-                        "oLanguage": {
-                            "sLengthMenu": "_MENU_ записей на страницу",
-                            "sSearch": "Поиск:",
-                            "sZeroRecords": "Ничего не найдено - извините",
-                            "sInfo": "Показано с _START_ по _END_ из _TOTAL_ записей",
-                            "sInfoEmpty": "Показано с 0 по 0 из 0 записей",
-                            "sInfoFiltered": "(отфильтровано из _MAX_ записей)",
-                            "oPaginate": {
-                                "sFirst": "Первая",
-                                "sLast": "Посл.",
-                                "sNext": "Вперед",
-                                "sPrevious": "Назад",
-                            },
-                            "bSortable": false,
-                        },
-                        responsive: true
-                    }).columnFilter({
-                        sPlaceHolder: 'head:after',
-                        aoColumns: [
-                            { type: "text" },
-                            { type: "text" },
-                            {
-                                type: "select",
-                                values: ['Новая', 'В эксплуатации', 'Разрабатывается', 'Выведена из эксплуатации']
-                            },
-                            {
-                                type: "select",
-                                values: ['1-й уровень', '2-й уровень', '3-й уровень', '4-й уровень']
-                            },
-                            { type: "text" },
-                            { type: "text" }
-                        ]
-                    });
-                    break;
-                }
+                initializeTable();
             });
     });
 
     //т.к. chosen устанавливает размер полей при запуске, то нельзя скрыть панель фильтра сразу, иначе он устанавливает размер в 0
     $('.row-catalog-date-pick-toggle-filter').css("display", "none");
+    $('.row-catalog-date-pick-toggle-filter').css("width", "100%");
+    
 
     //"многооконный режим"
     $('a').not('.samewindow').click(function() {
@@ -822,18 +649,17 @@ $(document).ready(function() {
         }
     });
 
-    $('input[name="EverydayAvailable"]').change(function() {
+    var applyDisabledOnAvailable = function() {
         $('.available-time-group').toggleClass('disable-inline-input-row');
-        $('.time-available').each(function() {
+        $('.time-available').each(function () {
             if ($(this).prop("disabled")) {
                 $(this).prop("disabled", false);
             } else {
                 $(this).prop("disabled", true);
             }
         });
-    });
-
-    $('input[name="EverydaySupport"]').change(function () {
+    }
+    var applyDisabledOnSupport = function() {
         $('.support-time-group').toggleClass('disable-inline-input-row');
         $('.time-support').each(function () {
             if ($(this).prop("disabled")) {
@@ -842,7 +668,29 @@ $(document).ready(function() {
                 $(this).prop("disabled", true);
             }
         });
+    }
+
+    $('input[name="EverydayAvailable"]').change(function() {
+        applyDisabledOnAvailable();
     });
+    if ($("input:radio[name=EverydayAvailable]:checked").val() === "True") {
+        applyDisabledOnAvailable();
+    }
+    $('input[name="EverydaySupport"]').change(function () {
+        applyDisabledOnSupport();
+    });
+    if ($("input:radio[name=EverydaySupport]:checked").val() === "True") {
+        applyDisabledOnSupport();
+    }
+
+    $('.main-cont-left-menu-item-sub').each(function() {
+        if ($(this).hasClass('left-menu-active')) {
+            $(this).parent().css('display', 'block');
+            $(this).parent().prev().find('.main-cont-left-menu-arrow').toggle()
+        };
+    });
+
+    $(".chosen-container").css("width", "100%");
 })
 
 
