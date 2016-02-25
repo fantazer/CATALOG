@@ -1,6 +1,9 @@
 
 $(document).ready(function() {
 
+    $('.get-like-modal').click(function(){
+        $('#like-modal').modal()
+    })
     $('#getModal').click(function(){
         $('#myModaler').modal()
     })
