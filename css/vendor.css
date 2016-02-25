@@ -3483,6 +3483,7 @@ p {
 }
 #like-modal h4 {
   margin-top: 10px;
+  font-size: 14px !important;
 }
 #like-modal .btn {
   margin: 0 !important;
