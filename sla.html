@@ -243,11 +243,11 @@
       <!-- main-cont-left -->
       
       <div class="col-md-1 col-sm-1 col-xs-1 "></div> 
+
       <!-- main-cont-right -->
         <div class="main-cont-right col-md-11 col-md-11 col-sm-11 col-xs-11">
 						<div class="main-cont-right-wraper">
-
-	            <!-- breadcrumb -->
+	           	<!-- breadcrumb -->
 	            		<div class="main-cont-right-breadcrumb">
     	<!-- <div class="main-cont-right-breadcrumb-leftpart pull-left"> -->
         <div class="main-cont-right-breadcrumb-leftpart">
@@ -260,86 +260,53 @@
     	</div>
   </div>
 	            <!-- breadcrumb -->
-	            
-							<div class="row row-flex">
-								<div class="col-md-8 main-cont-right-wraper-left">
-
-	                	<!-- top-part-form -->
-
-	                			<!-- item-select -->
-		                			<div class="w60per mt40">
-		                				<label for="">Тип предложения:</label>
-		                				<select name="" class="form-control" required="required">
-		                					<option value="">Новая</option>
-		                				</select>
-		                			</div>
-		                		<!-- item-select -->
-
-		                		<!-- item-select -->
-		                			<div class="w60per">
-		                				<label for="">Корректируемый параметр:</label>
-		                				<select name="" class="form-control" required="required">
-		                					<option value="">Новая</option>
-		                				</select>
-		                			</div>
-		                		<!-- item-select -->
-
-												<!-- item-input -->
-												<div class="w80per">
-			                		<label for="">Описание предложения:</label>
-		                			<textarea  class="form-control" rows="3" required="required"></textarea>
-		                		</div>
-												<!-- item-input -->
-
-												<!-- item-input -->
-												<div class="w60per">
-			                		<label for="">Дата поступления предложения: </label>
-		                			<input type="text" class="form-control " id="date-event-one" >
-	                			</div>
-												<!-- item-input -->
-
-												<!-- item-select -->
-		                			<div class="w60per">
-		                				<label for="">Подразделение-инициатор:</label>
-		                				<select name="" class="form-control" required="required">
-		                					<option value="">Новая</option>
-		                				</select>
-		                			</div>
-		                		<!-- item-select -->
-
-		                		<!-- item-select -->
-		                			<div class="w60per">
-		                				<label for="">Статус предложения: </label>
-		                				<select name="" class="form-control" required="required">
-		                					<option value="">Новая</option>
-		                				</select>
-		                			</div>
-		                		<!-- item-select -->
-
-		                		<!-- item-input -->
-		                		<div class="w80per">
-			                		<label for="">Комментарий:</label>
-		                			<textarea  class="form-control" rows="3" required="required"></textarea>
-		                		</div>
-												<!-- item-input -->
-
-												<!-- item-input -->
-												<div class="w80per">
-			                		<label for="">Резюме:</label>
-		                			<textarea  class="form-control" rows="3" required="required"></textarea>
-		                		</div>
-												<!-- item-input -->
-	                	<!-- top-part-form -->
-
-	                	<!-- icon-line -->
-			                <div class="flex-start ">
-			                  <button type="button" class="btn btn-danger mr20">Сохранить</button>
-			                  <button type="button" class="btn btn-primary mr20">Сохранить</button>
-			                  <button type="button" class="btn btn-primary mr20">Сохранить и закрыть</button>
-			                </div>
-		                <!-- icon-line -->
+							<div class="sla-wraper">
+								<div class="sla-el">
+									<div class="sla-title sla-title-active">Выбор среза данных для построения отчета</div>
+									<div class="sla-cont">
+										<p>Выберите срез данных для отчета SLA:</p>
+										<div class="sla-radio-row">
+											<input data-report="user" type="radio" name="sla"> 
+											<label>По пользователям</label>
+										</div>
+										<div class="sla-radio-row">
+											<input data-report="system" type="radio" name="sla"> 
+											<label>По ИТ-системам</label>
+										</div>
+										<div class="sla-radio-row">
+											<input data-report="service" type="radio" name="sla"> 
+											<label>По услугам</label>
+										</div>
+									</div>
 								</div>
-								
+								<div class="sla-el">
+									<div class="sla-title">Выбор параметра среза данных</div>
+									<div class="sla-cont sla-cont-disable">
+
+										<div data-slacont="user" class="sla-cont-change">
+											<p>По пользователям</p>
+											<input type="text" placeholder="по пользователям">
+										</div>
+
+										<div data-slacont="system" class="sla-cont-change hide">
+											<p>По ИТ-системам</p>
+											<input type="text" placeholder="По ИТ-системам">
+										</div>
+
+										<div data-slacont="service" class="sla-cont-change hide">
+											<p>По услугам</p>
+											<input type="text" placeholder="По услугам">
+										</div>
+										
+										
+									</div>
+								</div>
+								<div class="sla-el">
+									<div class="sla-title">Формирование отчета</div> 
+									<div class="sla-cont sla-cont-disable">
+										<button type="button" class="btn btn-primary mr25">Скачать сформированный</button>
+									</div>
+								</div>
 							</div>
 					</div>	
       	</div>

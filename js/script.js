@@ -1,6 +1,43 @@
 
 $(document).ready(function() {
 
+    //Controls SLA
+    $('.sla-title').click(function(){
+         $('.sla-title').each(function(){
+            $(this).removeClass("sla-title-active")
+        })
+        $(this).addClass("sla-title-active")
+        $('.sla-cont').each(function(){
+            $(this).addClass("sla-cont-disable")
+        })
+        $(this).next('.sla-cont').removeClass("sla-cont-disable")
+    })
+
+    $('.sla-radio-row input').click(function(){
+        var ActiveSla = $(this).data("report");
+        $('.sla-cont-change').each(function(){
+            $(this).addClass("hide")
+            if($(this).data("slacont")==ActiveSla){
+             $(this).removeClass("hide")
+             console.log('msg')
+            }
+        })
+    })
+    //Tab for tools
+    $('.tools-tab-el').click(function(){
+        $('.tools-tab-el').each(function(){
+            $(this).removeClass("tools-tab-el-active")
+        })
+        $(this).addClass("tools-tab-el-active")
+        var ActiveTabHead = $(this).data("tabname");
+        $('.tools-tab-content-el').each(function(){
+            $(this).addClass("hide")
+            if($(this).data("tabcont")==ActiveTabHead){
+             $(this).removeClass("hide")
+            }
+        })
+    })
+
     $('.get-like-modal').click(function(){
         $('#like-modal').modal()
     })
